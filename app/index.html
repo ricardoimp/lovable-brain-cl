@@ -78,6 +78,13 @@ textarea{width:100%;resize:vertical}
 .split i{display:flex;align-items:center;padding:0 14px;font-style:normal;font-size:.82rem;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden}
 .split .kb{background:var(--build)} .split .kr{background:var(--run)}
 .sbl{display:flex;justify-content:space-between;gap:12px;font-size:.78rem;color:var(--mudo)}
+.exp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.expb{background:var(--cartao2);border:1px solid var(--linha);border-radius:14px;padding:14px 16px;min-width:0}
+.expb h3{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.expb p{margin:0;font-size:.86rem;color:var(--mudo);line-height:1.6}
+.expb i{width:10px;height:10px;border-radius:3px;flex:none}
+.dotb{background:var(--build)} .dotr{background:var(--run)}
+@media (max-width:760px){.exp{grid-template-columns:1fr}}
 
 .bars{display:flex;flex-direction:column;gap:9px}
 .br{display:grid;grid-template-columns:minmax(0,12em) 1fr auto;gap:10px;align-items:center;font-size:.86rem}
@@ -223,7 +230,10 @@ tr.best td{background:rgba(61,214,140,.08)}
     <section class="card">
       <div class="ch"><h2>Run e Build</h2><span class="status" id="periodoRB"></span></div>
       <div class="split" id="split"></div>
-      <div class="sbl"><span>Build: desenvolvimento, temporário</span><span>Run: custo fixo para manter no ar</span></div>
+      <div class="exp">
+        <div class="expb"><h3><i class="dotb"></i>Build · desenvolvimento</h3><p>Créditos gastos quando você pede algo ao agente do Lovable: criar telas, corrigir erros, conversar no chat, gerar imagens. É temporário: sobe quando um projeto está sendo construído e cai quando ele fica pronto. Você controla quanto gasta pelo tamanho e pela quantidade de pedidos.</p></div>
+        <div class="expb"><h3><i class="dotr"></i>Run · manter no ar</h3><p>Créditos cobrados para os sistemas publicados funcionarem: banco de dados ligado 24 horas, tráfego de páginas, imagens e áudio entregues aos visitantes, funções, armazenamento e IA. É custo fixo e recorrente e cresce com a audiência. Reduz com cache, CDN e banco do tamanho certo.</p></div>
+      </div>
     </section>
     <section class="card" id="insCard">
       <div class="ch"><h2>Insights da última leitura</h2><span class="status" id="insData"></span></div>
