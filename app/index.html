@@ -1,0 +1,980 @@
+<title>Lovable Créditos e Gastos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: palco escuro com brilho em gradiente (laranja, rosa, azul) atrás do título centralizado; abas em pílula; abaixo, painéis escuros em uma coluna. Tema escuro fixo, como o guia. */
+:root{
+  --ceu:#05070D; --fundo:#0B0E16; --cartao:#141824; --cartao2:#1B2030; --linha:#262C3D;
+  --texto:#F4F5F8; --mudo:#9AA1B4;
+  --laranja:#FF6A1A; --rosa:#FF4FA3; --azul:#4F6BFF; --lilas:#A98BFF;
+  --build:#A98BFF; --run:#4F7BFF; --tinta:#F4F5F8; --sobre-azul:#FFFFFF; --sobre-azul-mudo:#B7BED0;
+  --vermelho:#FF5A5F; --amarelo:#FFC24A; --verde:#3DD68C;
+  --v-bg:rgba(255,90,95,.14); --a-bg:rgba(255,194,74,.14); --g-bg:rgba(61,214,140,.14);
+  --grad:linear-gradient(90deg,var(--laranja),var(--rosa) 45%,var(--azul));
+  --titulo:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --corpo:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+html{background:var(--ceu)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--fundo);color:var(--texto);font-family:var(--corpo);font-size:15px;line-height:1.55;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2{font-family:var(--titulo);margin:0;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:1.02rem;font-weight:700;margin-bottom:14px}
+h3{font-size:.95rem;font-weight:600;margin:0;line-height:1.35}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--rosa);outline-offset:2px}
+
+.hd{position:relative;overflow:hidden;background:var(--ceu);padding-block:34px 0;text-align:center;isolation:isolate}
+.hd::before{content:"";position:absolute;z-index:-1;left:50%;bottom:-260px;width:1300px;height:520px;transform:translateX(-50%);
+  background:radial-gradient(ellipse at 50% 70%,rgba(255,106,26,.55),rgba(255,79,163,.45) 35%,rgba(79,107,255,.45) 58%,transparent 75%);filter:blur(30px)}
+.hd::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.18;mix-blend-mode:overlay;
+  background-image:radial-gradient(rgba(255,255,255,.6) .5px,transparent .6px);background-size:3px 3px}
+.brand{display:inline-flex;align-items:center;gap:10px}
+.mark{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--laranja),var(--rosa) 50%,var(--azul));box-shadow:0 0 24px rgba(255,79,163,.45)}
+.wm{font-family:var(--titulo);font-weight:800;font-size:1.35rem;letter-spacing:-.03em}
+.tag{font-weight:600;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);color:#fff;padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.06)}
+.hd h1{font-size:clamp(1.9rem,5.4vw,3.3rem);font-weight:800;line-height:1.05;margin:18px auto 8px;max-width:16ch}
+.sub{color:var(--sobre-azul-mudo);margin:0 auto 22px;font-size:.95rem;max-width:60ch}
+.tabs{display:inline-flex;gap:4px;max-width:100%;overflow-x:auto;scrollbar-width:none;padding:5px;border-radius:999px;background:rgba(10,12,20,.72);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);margin-bottom:26px}
+.tabs button{background:transparent;border:0;color:var(--sobre-azul-mudo);padding:8px 16px;border-radius:999px;font-weight:600;white-space:nowrap;font-size:.9rem}
+.tabs button[aria-selected="true"]{background:#fff;color:#0B0E16}
+
+main{padding-block:28px 56px}
+.pane{display:flex;flex-direction:column;gap:20px}
+.card{background:var(--cartao);border:1px solid var(--linha);border-radius:20px;padding:22px;min-width:0}
+.ch{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.ch h2{margin:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.nt{font-size:.82rem;color:var(--mudo);margin:10px 0 0;max-width:75ch}
+.empty{padding:28px 20px;text-align:center;color:var(--mudo);border:1px dashed var(--linha);border-radius:16px}
+.empty b{display:block;color:var(--texto);margin-bottom:4px}
+
+.btn{border:0;border-radius:999px;padding:9px 18px;font-weight:600;background:#fff;color:#0B0E16}
+.btn.sec{background:transparent;color:var(--texto);border:1px solid var(--linha)}
+.btn.perigo{background:transparent;color:var(--vermelho);border:1px solid var(--linha)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:.8rem;color:var(--mudo)}
+input[type=text],input[type=date],input[type=number],select,textarea{background:var(--cartao2);border:1px solid var(--linha);border-radius:12px;padding:8px 11px;min-width:0}
+textarea{width:100%;resize:vertical}
+.mono{font-family:var(--mono);font-size:.8rem}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);background:var(--cartao);border:1px solid var(--linha);border-radius:20px;overflow:hidden}
+.kpi{padding:18px 20px;border-right:1px solid var(--linha)}
+.kpi:last-child{border-right:0}
+.kl{font-size:.8rem;color:var(--mudo)}
+.kv{font-family:var(--titulo);font-weight:800;letter-spacing:-.02em;font-size:clamp(1.35rem,3vw,1.85rem);margin:2px 0 6px}
+.kd{font-size:.78rem;color:var(--mudo);display:flex;flex-direction:column;gap:3px}
+.pill{display:inline-block;align-self:flex-start;font-weight:600;font-size:.74rem;padding:2px 9px;border-radius:999px;background:var(--cartao2);border:1px solid var(--linha)}
+.pill.pos{background:var(--g-bg);color:var(--verde);border-color:transparent} .pill.neg{background:var(--v-bg);color:var(--vermelho);border-color:transparent}
+.pill.b{background:rgba(169,139,255,.16);color:var(--build);border-color:transparent} .pill.r{background:rgba(79,123,255,.18);color:#8FA8FF;border-color:transparent}
+
+.split{display:flex;height:32px;border-radius:999px;overflow:hidden;margin:8px 0 8px}
+.split i{display:flex;align-items:center;padding:0 14px;font-style:normal;font-size:.82rem;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden}
+.split .kb{background:var(--build)} .split .kr{background:var(--run)}
+.sbl{display:flex;justify-content:space-between;gap:12px;font-size:.78rem;color:var(--mudo)}
+
+.bars{display:flex;flex-direction:column;gap:9px}
+.br{display:grid;grid-template-columns:minmax(0,12em) 1fr auto;gap:10px;align-items:center;font-size:.86rem}
+.bn{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bt{height:8px;background:var(--cartao2);border-radius:4px;overflow:hidden;display:flex}
+.bt i{display:block;height:100%;background:var(--run)}
+.bt i.b{background:var(--build)}
+.bv{text-align:right;font-weight:600;min-width:4.5em}
+
+.als{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.al{position:relative;display:grid;grid-template-columns:auto 1fr;gap:12px;padding:13px 15px 13px 19px;border-radius:14px;background:var(--cartao2)}
+.al::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:4px;background:var(--sc)}
+.al.critico{--sc:var(--vermelho)} .al.atencao{--sc:var(--amarelo)} .al.positivo{--sc:var(--verde)}
+.sg{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--sc);padding-top:2px;min-width:5.5em}
+.al p{margin:2px 0 0;font-size:.88rem;color:var(--mudo)}
+
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.86rem}
+th{font-weight:500;color:var(--mudo);text-align:left;font-size:.76rem;padding:0 8px 8px;border-bottom:1px solid var(--linha);white-space:nowrap}
+td{padding:9px 8px;border-bottom:1px solid var(--linha);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.n{text-align:right;white-space:nowrap}
+tr.tot td{font-weight:700}
+tr.grp td{background:var(--cartao2);font-weight:600;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mudo)}
+
+.drop{border:1.5px dashed var(--linha);border-radius:18px;padding:26px;text-align:center;color:var(--mudo);transition:border-color .15s,background .15s}
+.drop.on{border-color:var(--rosa);background:rgba(255,79,163,.06);color:var(--texto)}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.thumbs figure{margin:0;position:relative;width:110px}
+.thumbs img{width:110px;height:72px;object-fit:cover;border-radius:10px;border:1px solid var(--linha);display:block}
+.thumbs button{position:absolute;top:4px;right:4px;border:0;border-radius:999px;width:22px;height:22px;background:rgba(0,0,0,.7);color:#fff;font-size:.8rem;line-height:1}
+.status{font-size:.85rem;color:var(--mudo)}
+.status.err{color:var(--vermelho)}
+
+.cap{border:1px solid var(--linha);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;background:var(--cartao2)}
+.cap header{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.snap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.86rem;padding:6px 0;border-top:1px solid var(--linha)}
+.snap .mono{color:var(--mudo)}
+.imgs{display:flex;gap:6px;flex-wrap:wrap}
+.imgs a img{width:72px;height:48px;object-fit:cover;border-radius:8px;border:1px solid var(--linha)}
+
+.chart{position:relative}
+.chart svg{width:100%;height:240px;display:block;overflow:visible}
+.chart .gl{stroke:var(--linha);stroke-width:1}
+.chart .ax{fill:var(--mudo);font-size:11px;font-family:var(--corpo)}
+.chart .ln{fill:none;stroke-width:2.5}
+.leg{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--mudo);margin-top:8px}
+.leg span::before{content:"";display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle;background:var(--c)}
+
+.chat{display:flex;flex-direction:column;gap:12px;max-height:520px;overflow-y:auto;padding-right:4px}
+.msg{padding:10px 14px;border-radius:16px;max-width:85%;white-space:pre-wrap;font-size:.9rem;min-width:0;overflow-wrap:anywhere}
+.msg.u{align-self:flex-end;background:#fff;color:#0B0E16}
+.msg.a{align-self:flex-start;background:var(--cartao2);border:1px solid var(--linha)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{border:1px solid var(--linha);background:var(--cartao2);border-radius:999px;padding:6px 13px;font-size:.84rem}
+.chips button:hover{border-color:var(--rosa)}
+
+.ft{background:var(--ceu);color:var(--mudo);padding-block:22px;font-size:.8rem;border-top:1px solid var(--linha)}
+@media (max-width:760px){
+  .two{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr 1fr}
+  .kpi:nth-child(2n){border-right:0}
+  .kpi:nth-child(-n+2){border-bottom:1px solid var(--linha)}
+  .br{grid-template-columns:minmax(0,8em) 1fr auto}
+  .msg{max-width:100%}
+  .tabs{display:flex}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+body{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));pointer-events:none}
+.dock-in{display:flex;flex-direction:column;gap:8px;max-width:860px}
+.dock-panel,.dock-bar{pointer-events:auto}
+.dock-bar{display:flex;gap:8px;align-items:center;padding:7px 7px 7px 14px;border-radius:999px;background:rgba(20,24,36,.92);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);box-shadow:0 10px 40px rgba(0,0,0,.5),0 0 0 1px rgba(255,79,163,.12),0 -6px 40px rgba(255,79,163,.12)}
+.dock-bar input{flex:1;min-width:0;background:transparent;border:0;padding:8px 4px;outline:none}
+.dock-bar input:focus-visible{outline:none}
+.dock-bar:focus-within{border-color:rgba(255,79,163,.55)}
+.mark.sm{width:20px;height:20px;border-radius:6px;flex:none}
+.dock-panel{background:rgba(20,24,36,.97);border:1px solid var(--linha);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px;max-height:min(70vh,640px);box-shadow:0 20px 60px rgba(0,0,0,.6);backdrop-filter:blur(14px)}
+.dock-panel[hidden]{display:none}
+.dock-top{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.dock-top b{display:block}
+.dock-panel .chat{flex:1;min-height:120px;max-height:none}
+.msg.a{white-space:normal;display:flex;flex-direction:column;gap:10px;padding:12px;line-height:1.6}
+.msg.a .mb{background:var(--fundo);border:1px solid var(--linha);border-radius:14px;padding:12px 14px}
+.msg.a .mb:only-child{background:transparent;border:0;padding:2px 4px}
+.msg.a h4{margin:0 0 6px;font-size:.92rem;font-weight:700;letter-spacing:-.01em;color:var(--texto)}
+.msg.a p{margin:0 0 8px}
+.msg.a p:last-child,.msg.a ul:last-child,.msg.a ol:last-child{margin-bottom:0}
+.msg.a ul,.msg.a ol{margin:0 0 8px;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.msg.a li::marker{color:var(--rosa)}
+.msg.a strong{color:#fff;font-weight:700}
+.msg.a code{font-family:var(--mono);font-size:.8rem;background:var(--cartao2);padding:1px 5px;border-radius:5px}
+.msg.a table{font-size:.82rem;margin:4px 0 8px}
+.msg.a th{font-size:.72rem}
+.msg.a td{padding:6px 8px}
+.msg .code{border:1px solid rgba(255,79,163,.35);border-radius:14px;overflow:hidden;background:var(--fundo)}
+.msg pre{white-space:pre-wrap;margin:0;padding:12px 14px;font-family:var(--mono);font-size:.78rem;line-height:1.55;max-height:360px;overflow:auto}
+.msg .cp{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px 8px 14px;font-size:.78rem;color:var(--mudo);background:rgba(255,79,163,.07);border-bottom:1px solid var(--linha)}
+.msg .cp button{border:0;border-radius:999px;padding:5px 12px;font-weight:600;background:var(--grad);color:#fff}
+@media (max-width:760px){.dock-bar .btn{padding:8px 12px}}
+.rec{border-color:rgba(255,79,163,.35);background:linear-gradient(180deg,rgba(255,79,163,.07),transparent 40%),var(--cartao)}
+.ver{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:14px;background:var(--cartao2);margin-bottom:14px}
+.ver b{font-size:1.15rem;letter-spacing:-.01em}
+.ver span{color:var(--mudo);font-size:.86rem}
+tr.best td{background:rgba(61,214,140,.08)}
+#tPro tr.cur td:first-child::after,#tBiz tr.cur td:first-child::after{content:"atual";margin-left:8px;font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:999px;border:1px solid var(--verde);color:var(--verde)}
+#tRec{border-collapse:separate;border-spacing:0}
+#tRec tr.cur td{background:rgba(61,214,140,.10);border-top:2px solid var(--verde);border-bottom:2px solid var(--verde);font-weight:600;padding-block:12px}
+#tRec tr.cur td:first-child{border-left:2px solid var(--verde);border-radius:12px 0 0 12px}
+#tRec tr.cur td:last-child{border-right:2px solid var(--verde);border-radius:0 12px 12px 0}
+#tRec tr.cur{box-shadow:0 0 0 4px rgba(61,214,140,.12),0 0 24px rgba(61,214,140,.25)}
+.tagAtual,.tagMelhor{display:inline-block;margin-left:8px;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:999px;vertical-align:1px}
+.tagAtual{background:var(--verde);color:#06240F}
+.tagMelhor{border:1px solid var(--verde);color:var(--verde)}
+.kvs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.kvs div{background:var(--cartao2);border-radius:14px;padding:12px 14px}
+.kvs small{display:block;color:var(--mudo);font-size:.78rem}
+.kvs strong{font-size:1.2rem}
+</style>
+
+<header class="hd"><div class="wrap">
+  <div class="brand"><span class="mark" aria-hidden="true"></span><span class="wm">Lovable</span><span class="tag">Minha economia adorável</span></div>
+  <h1>Controle de créditos e gastos</h1>
+  <p class="sub" id="sub">Carregando o histórico…</p>
+  <nav class="tabs" style="margin-inline:auto" role="tablist" aria-label="Seções">
+    <button role="tab" id="t-painel" aria-selected="true" data-tab="painel">Painel</button>
+    <button role="tab" id="t-atualizar" aria-selected="false" data-tab="atualizar">Atualizar com prints</button>
+    <button role="tab" id="t-planos" aria-selected="false" data-tab="planos">Planos</button>
+    <button role="tab" id="t-historico" aria-selected="false" data-tab="historico">Histórico</button>
+    <button role="tab" id="t-comparar" aria-selected="false" data-tab="comparar">Comparar</button>
+    <button role="tab" id="t-assistente" aria-selected="false" data-tab="assistente">Prompt externo</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+
+<!-- PAINEL -->
+<section class="pane" id="p-painel" role="tabpanel">
+  <div id="painelVazio" class="empty"><b>Nenhuma leitura guardada ainda</b>Abra "Atualizar com prints", suba as capturas do painel Usage details do Lovable e a IA preenche o histórico.</div>
+  <div id="painelConteudo" class="pane" hidden>
+    <section class="kpis" id="kpis" aria-label="Indicadores"></section>
+    <section class="card">
+      <div class="ch"><h2>Run e Build</h2><span class="status" id="periodoRB"></span></div>
+      <div class="split" id="split"></div>
+      <div class="sbl"><span>Build: desenvolvimento, temporário</span><span>Run: custo fixo para manter no ar</span></div>
+    </section>
+    <section class="card" id="insCard">
+      <div class="ch"><h2>Insights da última leitura</h2><span class="status" id="insData"></span></div>
+      <ol class="als" id="insights"></ol>
+    </section>
+    <div class="two">
+      <section class="card"><h2>Créditos por projeto</h2><div class="bars" id="barProj"></div><p class="nt" id="notaProj"></p></section>
+      <section class="card"><h2>Run por categoria</h2><div class="bars" id="barCat"></div><p class="nt" id="notaCat"></p></section>
+    </div>
+    <section class="card" id="itensCard">
+      <h2>De onde vem o Run</h2>
+      <div class="tw"><table id="tItens"></table></div>
+      <p class="nt" id="notaItens"></p>
+    </section>
+    <section class="card">
+      <h2>Planejamento de gastos</h2>
+      <div class="row" style="margin-bottom:14px">
+        <label class="f">Teto de Build por mês<input type="number" id="pTeto" min="0" step="10"></label>
+        <label class="f">Corte esperado no Run (%)<input type="number" id="pCorte" min="0" max="90" step="5"></label>
+        <label class="f">R$ por crédito, plano<input type="number" id="pFranq" min="0" step="0.005"></label>
+        <label class="f">R$ por crédito, recarga<input type="number" id="pRec" min="0" step="0.01"></label>
+        <button class="btn sec" id="pSalvar">Salvar preços</button>
+      </div>
+      <div class="tw"><table id="tPlano"></table></div>
+      <p class="nt" id="notaPlano"></p>
+    </section>
+    <section class="card rec">
+      <div class="ch"><h2>Melhor plano para o seu gasto</h2>
+        <label class="f" style="flex-direction:row;align-items:center;gap:8px">Cenário<select id="recCen"></select></label></div>
+      <div id="recVeredito"></div>
+      <div class="tw"><table id="tRec"></table></div>
+      <p class="nt" id="notaRec"></p>
+      <div class="row" style="margin-top:14px"><button class="btn" id="bRecIA" type="button">Análise da IA</button><span class="status" id="stRecIA"></span></div>
+      <div id="recIA" class="msg a" style="max-width:100%;margin-top:12px" hidden></div>
+    </section>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="pane" id="p-planos" role="tabpanel" hidden>
+  <section class="card">
+    <div class="ch"><h2>Plano atual</h2><span class="status" id="plAtualiz"></span></div>
+    <div id="plAtual"></div>
+  </section>
+  <div class="two">
+    <section class="card"><h2>Pro mensal</h2><div class="tw"><table id="tPro"></table></div></section>
+    <section class="card"><h2>Recargas avulsas (Pro)</h2><div class="tw"><table id="tRecarga"></table></div></section>
+  </div>
+  <section class="card"><h2>Business mensal</h2><div class="tw"><table id="tBiz"></table></div><p class="nt">Business custa o dobro por crédito. Só compensa se você precisar de SSO, publicação interna, controle por função ou suporte prioritário.</p></section>
+  <section class="card">
+    <div class="ch"><h2>Atualizar tabela de planos</h2><button class="btn sec" id="bPlSalvar" type="button">Salvar planos</button></div>
+    <p class="nt" style="margin:-4px 0 10px">Quando o Lovable mudar os preços, edite aqui. Valores em dólar; a cotação vale para todo o painel.</p>
+    <div class="row" style="margin-bottom:10px"><label class="f">Cotação do dólar (R$)<input type="number" id="plCot" step="0.01" min="0"></label></div>
+    <textarea id="plJson" class="mono" rows="12" spellcheck="false"></textarea>
+    <p class="status" id="stPl"></p>
+  </section>
+</section>
+
+<!-- ATUALIZAR -->
+<section class="pane" id="p-atualizar" role="tabpanel" hidden>
+  <section class="card">
+    <h2>1. Suba os prints</h2>
+    <div class="drop" id="drop">Arraste as capturas do Usage details aqui, cole com Ctrl+V ou <label style="color:var(--azul);cursor:pointer;text-decoration:underline">escolha os arquivos<input type="file" id="fImg" accept="image/png,image/jpeg,image/webp" multiple hidden></label>.
+      <div class="nt" id="limImg" style="margin-inline:auto"></div></div>
+    <div class="thumbs" id="thumbs"></div>
+  </section>
+  <section class="card">
+    <h2>2. Cole a análise do Lovable (opcional)</h2>
+    <textarea id="txtAnalise" rows="5" placeholder="Cole aqui o texto do botão 'Otimize seu uso' ou outra análise com números."></textarea>
+    <div class="row" style="margin-top:12px">
+      <label class="f">Data da captura<input type="date" id="dCap"></label>
+      <label class="f">Saldo de créditos (opcional)<input type="number" id="saldo" step="0.01"></label>
+      <button class="btn" id="bLer">Ler com IA</button>
+      <span class="status" id="stLer"></span>
+    </div>
+  </section>
+  <section class="card" id="revCard" hidden>
+    <div class="ch"><h2>3. Confira e salve</h2><span class="status" id="stSalvar"></span></div>
+    <div id="revResumo"></div>
+    <details style="margin-top:12px"><summary>Editar os dados extraídos (JSON)</summary>
+      <textarea id="revJson" class="mono" rows="16" spellcheck="false" style="margin-top:8px"></textarea></details>
+    <div class="row" style="margin-top:12px"><button class="btn" id="bSalvar">Salvar no histórico</button><button class="btn sec" id="bDescartar">Descartar</button></div>
+  </section>
+  <p class="nt">Sem prints? Clique em <button class="btn sec" id="bManual" style="padding:4px 10px">lançar manualmente</button> para preencher o JSON à mão.</p>
+</section>
+
+<!-- HISTÓRICO -->
+<section class="pane" id="p-historico" role="tabpanel" hidden>
+  <section class="card">
+    <div class="ch"><h2>Evolução</h2>
+      <label class="f" style="flex-direction:row;align-items:center;gap:8px">Ver<select id="selEvo"></select></label></div>
+    <div class="chart" id="evo"></div>
+    <div class="leg" id="evoLeg"></div>
+    <p class="nt">Valores por dia, para leituras de períodos diferentes (90 dias, 14 dias, 30 dias) ficarem comparáveis. Cada ponto é o fim do período lido.</p>
+  </section>
+  <section class="card"><h2>Leituras guardadas</h2><div id="lista" class="pane" style="gap:12px"></div></section>
+</section>
+
+<!-- COMPARAR -->
+<section class="pane" id="p-comparar" role="tabpanel" hidden>
+  <section class="card">
+    <h2>Escolha duas leituras</h2>
+    <div class="row">
+      <label class="f">Antes<select id="cA"></select></label>
+      <label class="f">Depois<select id="cB"></select></label>
+      <label class="f">Mostrar<select id="cModo"><option value="dia">Por dia (normalizado)</option><option value="bruto">Valor bruto do período</option><option value="mes">Projeção de 30 dias</option></select></label>
+    </div>
+    <p class="nt">Por dia é o modo justo para períodos de tamanhos diferentes. Bruto só faz sentido entre leituras do mesmo tamanho.</p>
+  </section>
+  <section class="card"><div class="tw"><table id="tCmp"></table></div></section>
+</section>
+
+<!-- ASSISTENTE -->
+<section class="pane" id="p-assistente" role="tabpanel" hidden>
+  
+  <section class="card">
+    <div class="ch"><h2>Prompt para outra IA</h2><button class="btn sec" id="bCopiar">Copiar prompt</button></div>
+    <p class="nt" style="margin:-4px 0 10px">Todo o histórico com as instruções de análise. Cole no Claude, no ChatGPT ou onde preferir e faça suas perguntas.</p>
+    <textarea id="txtPrompt" class="mono" rows="12" readonly></textarea>
+  </section>
+</section>
+</main>
+<footer class="ft"><div class="wrap">Workspace Loggica Intermediações de Negócio, todos os projetos. Dados guardados neste artifact e compartilhados com quem tiver acesso. Valores em créditos do Lovable; conversão para reais pelos preços configurados no planejamento.</div></footer>
+
+<div class="dock" id="dock" aria-label="Assistente de planejamento">
+  <div class="dock-in wrap">
+    <div class="dock-panel" id="dockPanel" hidden>
+      <div class="dock-top">
+        <div><b>Assistente de planejamento</b><span class="status" id="ctxInfo"></span></div>
+        <div class="row"><button class="btn sec" id="bLimparChat" type="button">Nova conversa</button><button class="btn sec" id="bFechar" type="button" aria-label="Fechar">Fechar</button></div>
+      </div>
+      <div class="chips" id="chips">
+        <button type="button" data-q="Leia todo o painel e monte um planejamento de gastos para os próximos 3 meses, separando Run e Build, com teto de Build por projeto e metas de redução de Run.">Planejamento de 3 meses</button>
+        <button type="button" data-q="Quais melhorias você recomenda para reduzir gastos? Ordene por economia em créditos e em reais, e diga o esforço de cada uma.">Melhorias por economia</button>
+        <button type="button" data-q="O que mudou entre as leituras mais recentes? Separe Run e Build e explique as causas prováveis.">O que mudou</button>
+        <button type="button" data-q="Separe o consumo por negócio (Alpha FM, Connext, Genius, outros) e diga quanto cada um custa por mês.">Gasto por negócio</button>
+        <button type="button" data-q="Olhando meu gasto mensal e a tabela de planos, devo manter, fazer upgrade, downgrade, ir para o anual ou comprar recarga avulsa? Pense em performance e economia, agora e depois do desenvolvimento.">Melhor plano</button>
+        <button type="button" data-q="Escolha a melhoria de maior economia e escreva o prompt para eu colar no Lovable e executá-la no projeto certo.">Prompt para o Lovable</button>
+      </div>
+      <div class="chat" id="chat"></div>
+      <p class="nt" id="stChat"></p>
+    </div>
+    <form id="fChat" class="dock-bar">
+      <span class="mark sm" aria-hidden="true"></span>
+      <input type="text" id="qChat" autocomplete="off" placeholder="Discuta melhorias e planejamento com a IA, ela lê todo o painel…">
+      <button class="btn" id="bEnviar">Perguntar</button>
+      <button class="btn sec" type="button" id="bParar" hidden>Parar</button>
+    </form>
+  </div>
+</div>
+
+<script>
+(() => {
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = (v, d) => {
+  if (v == null || v === "" || isNaN(v)) return "–";
+  v = Number(v); if (d == null) d = Math.abs(v) >= 100 ? 0 : Math.abs(v) >= 10 ? 1 : 2;
+  return v.toLocaleString("pt-BR", { minimumFractionDigits: d, maximumFractionDigits: d });
+};
+const reais = (v) => (v == null || isNaN(v)) ? "–" : "R$ " + Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+const pct = (a, b) => (a == null || b == null || !b) ? null : (a - b) / b * 100;
+const dataBR = (s) => { if (!s) return "–"; const [y, m, d] = String(s).slice(0, 10).split("-"); return d ? `${d}/${m}/${y}` : esc(s); };
+const hoje = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); };
+const isN = (v) => v != null && v !== "" && !isNaN(v);
+
+let db = null, assets = null, sample = null, limits = null;
+let snaps = [];             // [{id, ...data}]
+let precos = { franquia: 1.375, recarga: 1.65, teto_build: 400, corte_run: 0 };
+let pendentes = [];         // imagens escolhidas
+let extraido = null;        // resultado da IA antes de salvar
+let turns = [];             // conversa
+let ctlChat = null;
+
+/* ---------- abas ---------- */
+const abas = ["painel", "atualizar", "planos", "historico", "comparar", "assistente"];
+function abrir(t) {
+  abas.forEach((a) => { $("p-" + a).hidden = a !== t; $("t-" + a).setAttribute("aria-selected", a === t); });
+  if (t === "assistente") montarPrompt();
+}
+document.querySelectorAll(".tabs button").forEach((b) => b.onclick = () => abrir(b.dataset.tab));
+const h = (location.hash || "").slice(1); if (abas.includes(h)) abrir(h);
+
+/* ---------- dados derivados ---------- */
+const ordem = (a, b) => (a.periodo_fim || a.captura || "").localeCompare(b.periodo_fim || b.captura || "") || (a.dias || 0) - (b.dias || 0);
+const rotulo = (s) => `${s.rotulo || (s.dias ? s.dias + " dias" : "Leitura")} · até ${dataBR(s.periodo_fim || s.captura)}`;
+const porDia = (v, s) => isN(v) && s.dias ? v / s.dias : null;
+function nomeCurto(n) { return String(n || "").replace(/^ALPHA FM\s*-\s*/i, "").replace(/\s*-\s*ALPHA FM$/i, "") || n; }
+
+function ultimaCaptura() {
+  if (!snaps.length) return [];
+  const cap = snaps.map((s) => s.captura || s.periodo_fim || "").sort().pop();
+  return snaps.filter((s) => (s.captura || s.periodo_fim) === cap);
+}
+function comRunBuild() { return [...snaps].filter((s) => isN(s.run) && isN(s.build) && s.dias).sort(ordem).pop(); }
+function com90() { return [...snaps].filter((s) => isN(s.total) && (s.projetos || []).length).sort((a, b) => ordem(a, b) || (a.dias - b.dias)).pop(); }
+
+/* ---------- painel ---------- */
+function renderPainel() {
+  $("painelVazio").hidden = !!snaps.length; $("painelConteudo").hidden = !snaps.length;
+  const ult = ultimaCaptura();
+  $("sub").textContent = snaps.length ? `Última captura em ${dataBR(ult[0]?.captura || ult[0]?.periodo_fim)} · ${snaps.length} leituras no histórico` : "Nenhuma leitura guardada ainda";
+  if (!snaps.length) return;
+  const rb = comRunBuild(), g = com90();
+  const anteriorG = g ? [...snaps].filter((s) => s !== g && s.dias === g.dias && isN(s.total)).sort(ordem).filter((s) => (s.periodo_fim || "") < (g.periodo_fim || "")).pop() : null;
+  const runMes = rb ? rb.run / rb.dias * 30 : null, buildMes = rb ? rb.build / rb.dias * 30 : null;
+  const k = [];
+  if (g) k.push([`Workspace, ${g.dias} dias`, num(g.total, 0), (isN(g.cota_gratuita) ? `<span class="pill">${num(g.cota_gratuita, 0)} na cota gratuita</span>` : "") + (anteriorG ? `<span>era ${num(anteriorG.total, 0)} até ${dataBR(anteriorG.periodo_fim)}</span>` : "")]);
+  if (rb) {
+    k.push(["Run por mês", "≈ " + num(runMes, 0), `<span class="pill r">${num(rb.run / rb.dias, 1)} por dia</span><span>custo permanente</span>`]);
+    k.push(["Build por mês", "≈ " + num(buildMes, 0), `<span class="pill b">${num(rb.build / rb.dias, 1)} por dia</span><span>temporário</span>`]);
+    k.push(["Custo no ritmo atual", reais((runMes + buildMes) * precos.franquia), `<span>por mês no preço do plano</span><span>${reais((runMes + buildMes) * precos.recarga)} em recarga</span>`]);
+  }
+  const saldo = [...snaps].filter((s) => isN(s.saldo)).sort(ordem).pop();
+  if (saldo && k.length < 4) k.push(["Saldo informado", num(saldo.saldo, 2), `<span>em ${dataBR(saldo.captura)}</span>`]);
+  $("kpis").innerHTML = k.map(([l, v, d]) => `<div class="kpi"><div class="kl">${l}</div><div class="kv">${v}</div><div class="kd">${d}</div></div>`).join("");
+
+  if (rb) {
+    const t = rb.run + rb.build, pb = rb.build / t * 100;
+    $("split").innerHTML = `<i class="kb" style="width:${pb}%">Build ${num(rb.build, 1)}</i><i class="kr" style="width:${100 - pb}%">Run ${num(rb.run, 1)}</i>`;
+    $("periodoRB").textContent = `${dataBR(rb.periodo_inicio)} a ${dataBR(rb.periodo_fim)}, ${rb.dias} dias`;
+  } else { $("split").innerHTML = ""; $("periodoRB").textContent = "Sem leitura com Run e Build separados"; }
+
+  const ins = [...snaps].filter((s) => (s.insights || []).length).sort(ordem).pop();
+  $("insCard").hidden = !ins;
+  if (ins) {
+    $("insData").textContent = "captura de " + dataBR(ins.captura);
+    const nomes = { critico: "Crítico", atencao: "Atenção", positivo: "Positivo" };
+    $("insights").innerHTML = ins.insights.map((i) => `<li class="al ${esc(i.nivel)}"><span class="sg">${nomes[i.nivel] || esc(i.nivel)}</span><div><h3>${esc(i.titulo)}</h3><p>${esc(i.texto)}</p></div></li>`).join("");
+  }
+
+  if (g) {
+    const ps = [...g.projetos].filter((p) => isN(p.total)).sort((a, b) => b.total - a.total);
+    const top = ps.slice(0, 10), resto = ps.slice(10).reduce((s, p) => s + p.total, 0), mx = top[0]?.total || 1;
+    $("barProj").innerHTML = top.map((p) => {
+      const temSplit = isN(p.run) && isN(p.build);
+      const barra = temSplit ? `<i class="b" style="width:${p.build / mx * 100}%"></i><i style="width:${p.run / mx * 100}%"></i>` : `<i style="width:${p.total / mx * 100}%;background:var(--mudo)"></i>`;
+      return `<div class="br"><div class="bn" title="${esc(p.nome)}">${esc(nomeCurto(p.nome))}</div><div class="bt">${barra}</div><div class="bv">${num(p.total)}</div></div>`;
+    }).join("") + (resto ? `<div class="br"><div class="bn">Demais (${ps.length - 10})</div><div class="bt"><i style="width:${resto / mx * 100}%;background:var(--mudo)"></i></div><div class="bv">${num(resto)}</div></div>` : "");
+    $("notaProj").textContent = `${g.dias} dias até ${dataBR(g.periodo_fim)}. Barras roxas e azuis quando a leitura separa Build e Run do projeto.`;
+  }
+  const rc = [...snaps].filter((s) => s.run_categorias && Object.values(s.run_categorias).some(isN)).sort(ordem).pop();
+  const nomesCat = { rede: "Rede (tráfego)", banco: "Banco de dados", funcoes: "Funções", ia: "IA", storage: "Storage", realtime: "Realtime", conectores: "Conectores" };
+  if (rc) {
+    const ent = Object.entries(rc.run_categorias).filter(([, v]) => isN(v)).sort((a, b) => b[1] - a[1]);
+    const tot = ent.reduce((s, [, v]) => s + v, 0), mx = ent[0]?.[1] || 1;
+    $("barCat").innerHTML = ent.map(([k2, v]) => `<div class="br"><div class="bn">${esc(nomesCat[k2] || k2)}</div><div class="bt"><i style="width:${Math.max(v / mx * 100, .5)}%"></i></div><div class="bv">${num(v)} <span class="status">${num(v / tot * 100, 0)}%</span></div></div>`).join("");
+    $("notaCat").textContent = `${rotulo(rc)}.`;
+  } else $("barCat").innerHTML = `<p class="status">Nenhuma leitura com categorias de Run.</p>`;
+
+  const it = [...snaps].filter((s) => (s.run_itens || []).length && s.dias).sort(ordem).pop();
+  $("itensCard").hidden = !it;
+  if (it) {
+    const grupos = {};
+    it.run_itens.forEach((i) => (grupos[i.projeto || "Outros"] ||= []).push(i));
+    let html = `<thead><tr><th>Item</th><th class="n">Volume</th><th class="n">Créditos no período</th><th class="n">Por dia</th><th class="n">Por mês</th></tr></thead><tbody>`;
+    Object.entries(grupos).sort((a, b) => b[1].reduce((s, i) => s + (i.creditos || 0), 0) - a[1].reduce((s, i) => s + (i.creditos || 0), 0)).forEach(([p, l]) => {
+      const t = l.reduce((s, i) => s + (Number(i.creditos) || 0), 0);
+      html += `<tr class="grp"><td colspan="5">${esc(p)} · ${num(t, 2)} créditos · ${num(t / it.dias, 2)} por dia</td></tr>`;
+      l.sort((a, b) => (b.creditos || 0) - (a.creditos || 0)).forEach((i) => html += `<tr><td>${esc(i.item)}</td><td class="n">${esc(i.volume || "")}</td><td class="n">${num(i.creditos, 2)}</td><td class="n">${num(i.creditos / it.dias, 2)}</td><td class="n"><b>${num(i.creditos / it.dias * 30, 0)}</b></td></tr>`);
+    });
+    $("tItens").innerHTML = html + "</tbody>";
+    $("notaItens").textContent = `${rotulo(it)}. Mês projetado com 30 dias.`;
+  }
+  renderPlano(rb, g);
+}
+
+function renderPlano(rb, g) {
+  $("pTeto").value = precos.teto_build; $("pCorte").value = precos.corte_run; $("pFranq").value = precos.franquia; $("pRec").value = precos.recarga;
+  if (!rb) { $("tPlano").innerHTML = ""; $("notaPlano").textContent = "O planejamento precisa de uma leitura com Run e Build separados."; return; }
+  const run = rb.run / rb.dias * 30, build = rb.build / rb.dias * 30, corte = (Number(precos.corte_run) || 0) / 100, teto = Number(precos.teto_build) || 0;
+  const cota = g && isN(g.cota_gratuita) && g.dias ? g.cota_gratuita / g.dias * 30 : 0;
+  const runOt = run * (1 - corte);
+  const cen = [
+    ["Ritmo atual", run, build],
+    ["Com teto de Build", run, Math.min(build, teto)],
+    ["Teto de Build e Run otimizado", runOt, Math.min(build, teto)],
+    ["Manutenção (Build mínimo)", runOt, Math.min(150, teto)],
+    ["Só Run, sem desenvolvimento", runOt, 0],
+  ];
+  $("tPlano").innerHTML = `<thead><tr><th>Cenário mensal</th><th class="n">Run</th><th class="n">Build</th><th class="n">Total</th><th class="n">Após cota gratuita</th><th class="n">No plano</th><th class="n">Em recarga</th></tr></thead><tbody>` +
+    cen.map(([n, r, b], i) => { const t = r + b, liq = Math.max(t - cota, 0); return `<tr${i === 0 ? ' class="tot"' : ""}><td>${n}</td><td class="n">${num(r, 0)}</td><td class="n">${num(b, 0)}</td><td class="n"><b>${num(t, 0)}</b></td><td class="n">${num(liq, 0)}</td><td class="n">${reais(liq * precos.franquia)}</td><td class="n">${reais(liq * precos.recarga)}</td></tr>`; }).join("") + "</tbody>";
+  $("notaPlano").textContent = `Base: ${rotulo(rb)}. Cota gratuita estimada em ${num(cota, 0)} créditos por mês${g ? " a partir da leitura de " + g.dias + " dias" : ""}. Ajuste o teto e o corte esperado para simular.`;
+}
+["pTeto", "pCorte", "pFranq", "pRec"].forEach((id) => $(id).addEventListener("input", () => {
+  precos = { franquia: Number($("pFranq").value) || 0, recarga: Number($("pRec").value) || 0, teto_build: Number($("pTeto").value) || 0, corte_run: Number($("pCorte").value) || 0 };
+  renderPlano(comRunBuild(), com90()); renderRec();
+}));
+$("pSalvar").onclick = async () => {
+  if (!db) return;
+  $("pSalvar").disabled = true;
+  try { await db.doc("config/precos").set({ ...precos }); $("pSalvar").textContent = "Salvo"; setTimeout(() => $("pSalvar").textContent = "Salvar preços", 1500); }
+  catch (e) { $("pSalvar").textContent = "Sem permissão para salvar"; }
+  $("pSalvar").disabled = false;
+};
+
+/* ---------- histórico ---------- */
+const SERIES = [["total", "Total por dia", "var(--tinta)"], ["run", "Run por dia", "var(--run)"], ["build", "Build por dia", "var(--build)"]];
+function opcoesEvo() {
+  const nomes = new Set(); snaps.forEach((s) => (s.projetos || []).forEach((p) => isN(p.total) && nomes.add(p.nome)));
+  const atual = $("selEvo").value;
+  $("selEvo").innerHTML = `<option value="ws">Workspace: total, Run e Build</option>` + [...nomes].sort().map((n) => `<option value="p:${esc(n)}">${esc(nomeCurto(n))}</option>`).join("");
+  if ([...$("selEvo").options].some((o) => o.value === atual)) $("selEvo").value = atual;
+}
+$("selEvo").onchange = () => renderEvo();
+function renderEvo() {
+  const sel = $("selEvo").value || "ws";
+  let series;
+  if (sel === "ws") series = SERIES.map(([k, n, c]) => ({ n, c, pts: snaps.filter((s) => isN(s[k]) && s.dias && s.periodo_fim).map((s) => ({ x: s.periodo_fim, y: s[k] / s.dias, s })) }));
+  else {
+    const nome = sel.slice(2);
+    series = [["total", "Total por dia", "var(--tinta)"], ["run", "Run por dia", "var(--run)"], ["build", "Build por dia", "var(--build)"]].map(([k, n, c]) => ({ n, c, pts: snaps.filter((s) => s.dias && s.periodo_fim).map((s) => { const p = (s.projetos || []).find((q) => q.nome === nome); return p && isN(p[k]) ? { x: s.periodo_fim, y: p[k] / s.dias, s } : null; }).filter(Boolean) }));
+  }
+  series = series.filter((s) => s.pts.length).map((s) => ({ ...s, pts: s.pts.sort((a, b) => a.x.localeCompare(b.x)) }));
+  if (!series.length) { $("evo").innerHTML = `<div class="empty">Ainda não há leituras suficientes para este gráfico.</div>`; $("evoLeg").innerHTML = ""; return; }
+  const xs = [...new Set(series.flatMap((s) => s.pts.map((p) => p.x)))].sort();
+  const t0 = Date.parse(xs[0]), t1 = Date.parse(xs[xs.length - 1]), span = Math.max(t1 - t0, 864e5);
+  const ymax = Math.max(...series.flatMap((s) => s.pts.map((p) => p.y))) * 1.15 || 1;
+  const W = 1000, H = 240, L = 46, R = 16, T = 12, B = 28;
+  const X = (d) => L + (xs.length === 1 ? (W - L - R) / 2 : (Date.parse(d) - t0) / span * (W - L - R));
+  const Y = (v) => T + (1 - v / ymax) * (H - T - B);
+  const step = niceStep(ymax / 4);
+  let svg = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Evolução por dia">`;
+  for (let v = 0; v <= ymax; v += step) svg += `<line class="gl" x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}"/><text class="ax" x="${L - 6}" y="${Y(v) + 4}" text-anchor="end">${num(v, step < 1 ? 1 : 0)}</text>`;
+  xs.forEach((d, i) => { if (xs.length <= 8 || i === 0 || i === xs.length - 1) svg += `<text class="ax" x="${X(d)}" y="${H - 8}" text-anchor="${i === 0 && xs.length > 1 ? "start" : i === xs.length - 1 && xs.length > 1 ? "end" : "middle"}">${dataBR(d).slice(0, 5)}</text>`; });
+  series.forEach((s) => {
+    svg += `<polyline class="ln" style="stroke:${s.c}" vector-effect="non-scaling-stroke" points="${s.pts.map((p) => X(p.x) + "," + Y(p.y)).join(" ")}"/>`;
+    s.pts.forEach((p) => svg += `<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="4.5" style="fill:${s.c}"><title>${esc(s.n)}: ${num(p.y, 1)} em ${dataBR(p.x)} (${esc(rotulo(p.s))})</title></circle>`);
+  });
+  $("evo").innerHTML = svg + "</svg>";
+  $("evoLeg").innerHTML = series.map((s) => `<span style="--c:${s.c}">${esc(s.n)}</span>`).join("");
+}
+function niceStep(v) { const p = Math.pow(10, Math.floor(Math.log10(v || 1))); const m = v / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 5 ? 5 : 10) * p; }
+
+function renderLista() {
+  if (!snaps.length) { $("lista").innerHTML = `<div class="empty"><b>Histórico vazio</b>Cada atualização com prints vira uma captura aqui.</div>`; return; }
+  const caps = {}; snaps.forEach((s) => (caps[s.captura || s.periodo_fim || "sem data"] ||= []).push(s));
+  $("lista").innerHTML = Object.keys(caps).sort().reverse().map((c) => {
+    const l = caps[c].sort(ordem), imgs = [...new Set(l.flatMap((s) => s.imagens || []))];
+    return `<article class="cap"><header><h3>Captura de ${dataBR(c)}</h3><span class="status">${l.length} ${l.length > 1 ? "leituras" : "leitura"}</span></header>` +
+      l.map((s) => `<div class="snap"><div><b>${esc(s.rotulo || s.dias + " dias")}</b> <span class="mono">${dataBR(s.periodo_inicio)} a ${dataBR(s.periodo_fim)}</span><br><span class="status">${[isN(s.total) && "total " + num(s.total), isN(s.run) && "Run " + num(s.run), isN(s.build) && "Build " + num(s.build), (s.projetos || []).length && s.projetos.length + " projetos"].filter(Boolean).join(" · ")}</span></div><button class="btn perigo" data-del="${esc(s.id)}">Excluir</button></div>`).join("") +
+      (imgs.length ? `<div class="imgs">${imgs.map((id) => `<a href="/_blob/${esc(id)}" target="_blank" rel="noopener"><img src="/_blob/${esc(id)}" alt="Print da captura" loading="lazy"></a>`).join("")}</div>` : "") + `</article>`;
+  }).join("");
+}
+$("lista").addEventListener("click", async (e) => {
+  const b = e.target.closest("[data-del]"); if (!b || !db) return;
+  if (b.dataset.ok !== "1") { b.dataset.ok = "1"; b.textContent = "Confirmar exclusão"; setTimeout(() => { if (b.isConnected) { b.dataset.ok = ""; b.textContent = "Excluir"; } }, 4000); return; }
+  b.disabled = true;
+  try { await db.doc("snapshots/" + b.dataset.del).delete(); } catch (err) { b.textContent = "Sem permissão"; }
+});
+
+/* ---------- comparar ---------- */
+function opcoesCmp() {
+  const l = [...snaps].sort(ordem), o = l.map((s) => `<option value="${esc(s.id)}">${esc(rotulo(s))}</option>`).join("");
+  const a = $("cA").value, b = $("cB").value;
+  $("cA").innerHTML = o; $("cB").innerHTML = o;
+  if (l.find((s) => s.id === a)) $("cA").value = a; else if (l.length > 1) { const ult = l[l.length - 1]; const ant = [...l].reverse().find((s) => s !== ult && s.dias === ult.dias) || l[l.length - 2]; $("cA").value = ant.id; }
+  if (l.find((s) => s.id === b)) $("cB").value = b; else if (l.length) $("cB").value = l[l.length - 1].id;
+}
+["cA", "cB", "cModo"].forEach((id) => $(id).onchange = renderCmp);
+function renderCmp() {
+  const A = snaps.find((s) => s.id === $("cA").value), B = snaps.find((s) => s.id === $("cB").value);
+  if (!A || !B) { $("tCmp").innerHTML = `<tr><td class="status">Guarde pelo menos uma leitura para comparar.</td></tr>`; return; }
+  const modo = $("cModo").value;
+  const f = (v, s) => !isN(v) ? null : modo === "bruto" ? Number(v) : modo === "mes" ? v / s.dias * 30 : v / s.dias;
+  const und = modo === "bruto" ? "no período" : modo === "mes" ? "por mês" : "por dia";
+  const linha = (nome, va, vb, menorMelhor = true, cls = "") => {
+    const v = pct(vb, va); let c = "";
+    if (v != null && Math.abs(v) >= 1) c = (v < 0) === menorMelhor ? "pos" : "neg";
+    return `<tr class="${cls}"><td>${esc(nome)}</td><td class="n">${num(va)}</td><td class="n">${num(vb)}</td><td class="n">${va != null && vb != null ? (vb - va > 0 ? "+" : "") + num(vb - va) : "–"}</td><td class="n">${v == null ? "–" : `<span class="pill ${c}">${v > 0 ? "+" : ""}${num(v, 0)}%</span>`}</td></tr>`;
+  };
+  let html = `<thead><tr><th>Indicador (${und})</th><th class="n">${esc(rotulo(A))}</th><th class="n">${esc(rotulo(B))}</th><th class="n">Diferença</th><th class="n">Variação</th></tr></thead><tbody>`;
+  html += `<tr class="grp"><td colspan="5">Workspace</td></tr>`;
+  html += linha("Total", f(A.total, A), f(B.total, B), true, "tot") + linha("Run", f(A.run, A), f(B.run, B)) + linha("Build", f(A.build, A), f(B.build, B)) + linha("Cota gratuita", f(A.cota_gratuita, A), f(B.cota_gratuita, B), false);
+  const cats = [...new Set([...Object.keys(A.run_categorias || {}), ...Object.keys(B.run_categorias || {})])];
+  if (cats.length) { html += `<tr class="grp"><td colspan="5">Run por categoria</td></tr>`; cats.forEach((k) => html += linha(k, f((A.run_categorias || {})[k], A), f((B.run_categorias || {})[k], B))); }
+  const nomes = [...new Set([...(A.projetos || []), ...(B.projetos || [])].map((p) => p.nome))];
+  if (nomes.length) {
+    html += `<tr class="grp"><td colspan="5">Projetos (total)</td></tr>`;
+    nomes.map((n) => { const pa = (A.projetos || []).find((p) => p.nome === n), pb = (B.projetos || []).find((p) => p.nome === n); return [n, f(pa?.total, A), f(pb?.total, B), pa, pb]; })
+      .sort((x, y) => (y[2] ?? y[1] ?? 0) - (x[2] ?? x[1] ?? 0))
+      .forEach(([n, a, b, pa, pb]) => { html += linha(nomeCurto(n), a, b); if (isN(pa?.run) || isN(pb?.run)) html += linha("   Run de " + nomeCurto(n), f(pa?.run, A), f(pb?.run, B)); });
+  }
+  $("tCmp").innerHTML = html + "</tbody>";
+}
+
+/* ---------- importar prints ---------- */
+$("dCap").value = hoje();
+function addImgs(files) {
+  const max = limits?.images?.maxCount || 10;
+  [...files].filter((f) => /^image\//.test(f.type)).forEach((f) => { if (pendentes.length < max) pendentes.push(f); });
+  renderThumbs();
+}
+function renderThumbs() {
+  $("thumbs").innerHTML = pendentes.map((f, i) => `<figure><img src="${URL.createObjectURL(f)}" alt="${esc(f.name)}"><button data-rm="${i}" aria-label="Remover">×</button></figure>`).join("");
+}
+$("thumbs").onclick = (e) => { const b = e.target.closest("[data-rm]"); if (b) { pendentes.splice(+b.dataset.rm, 1); renderThumbs(); } };
+$("fImg").onchange = () => { addImgs($("fImg").files); $("fImg").value = ""; };
+const drop = $("drop");
+["dragenter", "dragover"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("on"); }));
+["dragleave", "drop"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("on"); }));
+drop.addEventListener("drop", (e) => addImgs(e.dataTransfer.files));
+document.addEventListener("paste", (e) => { if ($("p-atualizar").hidden) return; const fs = [...(e.clipboardData?.files || [])]; if (fs.length) addImgs(fs); });
+
+const SCHEMA = `{
+  "snapshots": [{
+    "rotulo": "nome curto do período, ex.: '90 dias' ou 'Run 14 dias'",
+    "captura": "YYYY-MM-DD (data em que os prints foram tirados)",
+    "periodo_inicio": "YYYY-MM-DD", "periodo_fim": "YYYY-MM-DD", "dias": 90,
+    "total": 0, "build": null, "run": null, "cota_gratuita": null, "saldo": null,
+    "projetos": [{"nome": "ALPHA FM - SITE", "total": 0, "build": null, "run": null, "cota_gratuita": null, "visitantes": null}],
+    "run_categorias": {"rede": null, "banco": null, "funcoes": null, "ia": null, "storage": null, "realtime": null},
+    "run_itens": [{"projeto": "ALPHA FM - SITE", "item": "Transferência em cache", "volume": "576,8 GB", "creditos": 0}]
+  }],
+  "insights": [{"nivel": "critico|atencao|positivo", "titulo": "frase curta", "texto": "1 a 3 frases com números"}]
+}`;
+function historicoCompacto() {
+  return [...snaps].sort(ordem).map(({ id, imagens, criado_em, insights, ...r }) => r);
+}
+$("bLer").onclick = async () => {
+  const txt = $("txtAnalise").value.trim();
+  if (!pendentes.length && !txt) { st("stLer", "Suba pelo menos um print ou cole uma análise.", true); return; }
+  if (!sample) { st("stLer", "A leitura por IA não está disponível nesta visualização. Use o lançamento manual.", true); return; }
+  if (pendentes.length && !limits?.images) { st("stLer", "Esta visualização não envia imagens para a IA. Cole o texto da análise ou lance manualmente.", true); return; }
+  $("bLer").disabled = true; st("stLer", "Lendo os prints… isso leva de 30 segundos a 2 minutos.");
+  const cap = $("dCap").value || hoje(), saldo = $("saldo").value;
+  const prompt = `Você é analista de custos de infraestrutura. Leia os prints do painel "Usage details" do Lovable e o texto de análise abaixo e extraia TODOS os números de créditos.
+
+Regras:
+- Cada período diferente vira um snapshot separado (ex.: a visão "Last 90 days" e uma análise "02/10 a 15/10" são dois snapshots).
+- Prints com filtro de um projeto (ex.: "ALPHA FM - SITE ×") mostram o total e a cota gratuita daquele projeto no período: junte ao snapshot do mesmo período, na lista "projetos".
+- A lista de projetos do print geral traz o total de cada um: inclua todos os visíveis.
+- Números estão em formato brasileiro: "1.305" = 1305; "54,5" = 54.5; "<0,0001" = 0.
+- "Last 90 days" termina na data da captura (${cap}); calcule o início. "Last 30 days" idem.
+- Build = créditos de desenvolvimento (criação, chat, imagens). Run = execução (rede, banco, funções, storage, IA, realtime).
+- Use null para o que não estiver visível. Nunca invente números.
+- data da captura: ${cap}.${saldo ? " Saldo informado pelo usuário: " + saldo + " créditos (coloque em 'saldo' do snapshot mais recente)." : ""}
+- Em "insights", escreva de 3 a 6 itens em português, sem travessões, comparando com o histórico abaixo. Lembre que Build é temporário (fase de desenvolvimento) e Run é custo fixo. Compare sempre por dia quando os períodos tiverem tamanhos diferentes.
+
+Responda só com JSON neste formato:
+${SCHEMA}
+
+Texto de análise colado:
+${txt || "(nenhum)"}
+
+Histórico já guardado (JSON):
+${JSON.stringify(historicoCompacto()).slice(0, 60000)}`;
+  try {
+    const r = await sample.json(prompt, { images: pendentes.length ? pendentes : undefined, modelTier: "complex", cache: false });
+    if (!r || !Array.isArray(r.snapshots) || !r.snapshots.length) throw { code: "vazio" };
+    r.snapshots.forEach((s) => { s.captura ||= cap; if (!s.dias && s.periodo_inicio && s.periodo_fim) s.dias = Math.round((Date.parse(s.periodo_fim) - Date.parse(s.periodo_inicio)) / 864e5) + 1; });
+    extraido = r; mostrarRevisao(); st("stLer", "Pronto. Confira os números abaixo antes de salvar.");
+  } catch (e) {
+    st("stLer", ({ not_granted: "Você não autorizou a IA nesta página.", rate_limited: "Muitas chamadas seguidas. Tente de novo em alguns minutos.", image_rejected: "Algum print foi recusado. Use PNG ou JPG.", invalid_json: "A IA respondeu fora do formato. Clique em Ler com IA de novo.", vazio: "Não encontrei números nos prints. Confira se são do painel Usage details." })[e?.code] || "A leitura falhou. Tente de novo.", true);
+  }
+  $("bLer").disabled = false;
+};
+$("bManual").onclick = () => {
+  extraido = { snapshots: [{ rotulo: "90 dias", captura: hoje(), periodo_inicio: null, periodo_fim: hoje(), dias: 90, total: null, build: null, run: null, cota_gratuita: null, saldo: null, projetos: [], run_categorias: {}, run_itens: [] }], insights: [] };
+  mostrarRevisao(); $("revCard").querySelector("details").open = true;
+};
+function mostrarRevisao() {
+  $("revCard").hidden = false;
+  $("revJson").value = JSON.stringify(extraido, null, 2);
+  resumoRevisao();
+  $("revCard").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth" });
+}
+function resumoRevisao() {
+  let r; try { r = JSON.parse($("revJson").value); } catch (e) { $("revResumo").innerHTML = `<p class="status err">O JSON tem um erro de formato.</p>`; return; }
+  $("revResumo").innerHTML = (r.snapshots || []).map((s) => `<div class="snap"><div><b>${esc(s.rotulo || "")}</b> <span class="mono">${dataBR(s.periodo_inicio)} a ${dataBR(s.periodo_fim)} · ${s.dias || "?"} dias</span><br><span class="status">${[isN(s.total) && "total " + num(s.total), isN(s.build) && "Build " + num(s.build), isN(s.run) && "Run " + num(s.run), isN(s.cota_gratuita) && "cota " + num(s.cota_gratuita), (s.projetos || []).length + " projetos", (s.run_itens || []).length + " itens de Run"].filter(Boolean).join(" · ")}</span></div></div>`).join("") +
+    ((r.insights || []).length ? `<ol class="als" style="margin-top:10px">${r.insights.map((i) => `<li class="al ${esc(i.nivel)}"><span class="sg">${esc(i.nivel)}</span><div><h3>${esc(i.titulo)}</h3><p>${esc(i.texto)}</p></div></li>`).join("")}</ol>` : "");
+}
+$("revJson").addEventListener("input", resumoRevisao);
+$("bDescartar").onclick = () => { extraido = null; $("revCard").hidden = true; };
+$("bSalvar").onclick = async () => {
+  let r; try { r = JSON.parse($("revJson").value); } catch (e) { st("stSalvar", "Corrija o JSON antes de salvar.", true); return; }
+  if (!db) { st("stSalvar", "O histórico não está disponível nesta visualização.", true); return; }
+  $("bSalvar").disabled = true;
+  let ids = [];
+  if (pendentes.length && assets) {
+    st("stSalvar", "Guardando os prints…");
+    for (const f of pendentes) { try { ids.push((await assets.upload(f)).id); } catch (e) {} }
+  }
+  st("stSalvar", "Salvando as leituras…");
+  try {
+    const list = r.snapshots || [];
+    for (let i = 0; i < list.length; i++) {
+      const s = list[i], ref = db.collection("snapshots").doc();
+      await ref.set({ ...s, imagens: ids, insights: i === list.length - 1 || list.length === 1 ? (r.insights || []) : [], criado_em: new Date().toISOString() });
+    }
+    // insights ficam no snapshot de maior detalhe: o último da lista
+    pendentes = []; renderThumbs(); $("txtAnalise").value = ""; $("saldo").value = ""; extraido = null; $("revCard").hidden = true;
+    st("stLer", "Salvo no histórico."); abrir("painel");
+  } catch (e) { st("stSalvar", e?.code === "quota_exceeded" ? "O histórico está cheio. Exclua leituras antigas." : "Não foi possível salvar. Você precisa ter permissão de edição.", true); }
+  $("bSalvar").disabled = false;
+};
+function st(id, t, err) { $(id).textContent = t; $(id).classList.toggle("err", !!err); }
+
+/* ---------- assistente ---------- */
+const INSTR = `Você é o analista financeiro do workspace "Loggica Intermediações de Negócio" no Lovable (plano Pro). O histórico cobre TODOS os projetos do workspace.
+Contexto:
+- Build = créditos gastos desenvolvendo com o agente do Lovable (criação, chat, imagens). É temporário: boa parte dos projetos está em desenvolvimento.
+- Run = créditos para manter os sistemas no ar (rede, banco de dados, funções, storage, IA). É custo fixo e recorrente e cresce com a audiência.
+- Projetos em produção com público: ALPHA FM - SITE (portal de notícias) e ALPHA FM - PLAYER (player da rádio ao vivo). Os demais são ferramentas internas, produtos em desenvolvimento ou projetos de outros negócios (Genius, Connext, Ludovico, Rádio Disney e outros).
+- As leituras têm períodos de tamanhos diferentes (90 dias, 14 dias etc.). Compare sempre por dia ou projete para 30 dias.
+Como responder:
+- Português do Brasil, direto, com números do histórico. Não invente dados; diga quando algo não está no histórico.
+- Separe sempre Run e Build, e quando fizer sentido agrupe por negócio (Alpha FM, Connext, Genius, outros). Mostre créditos e reais.
+- Sem travessões. Use tabelas quando ajudar.
+- Formatação: vá direto ao ponto, sem frase de abertura nem de despedida. Organize em seções curtas, cada uma com um título "## Título". Use listas com "-" e tabelas simples quando houver números para comparar. Use negrito só para o número ou decisão principal de cada seção. Não use emojis, separadores "---", citações ">" nem títulos com símbolos.
+- Sobre plano e créditos: recomende manter, upgrade, downgrade, plano anual ou recarga avulsa olhando o gasto mensal, lembrando que o Build é temporário, o Run é fixo, os créditos do Pro acumulam e o sistema não pode ficar sem crédito.
+- Você está ajudando a discutir melhorias e montar planejamento. Sempre use a leitura completa do painel abaixo (indicadores, cenários, insights e histórico).
+- Quando uma melhoria precisar ser feita em um projeto, e só então, termine com uma seção "Prompt para o Lovable" contendo UM bloco de código \`\`\`lovable com o prompt pronto para colar no chat do projeto certo. O prompt deve: dizer o projeto, o objetivo e o ganho esperado em créditos; pedir mudanças mínimas e escopadas, sem refatorar além do pedido; listar o que não pode mudar; pedir que o agente primeiro investigue e mostre o plano antes de alterar código; e terminar com como validar o resultado. Escreva o prompt em português.`;
+function leituraPainel() {
+  const rb = comRunBuild(), g = com90();
+  if (!rb && !g) return "Painel vazio.";
+  const L = [];
+  if (g) L.push(`Visão de ${g.dias} dias até ${dataBR(g.periodo_fim)}: total ${num(g.total, 0)} créditos, cota gratuita ${num(g.cota_gratuita, 0)}.`);
+  if (rb) {
+    const run = rb.run / rb.dias * 30, build = rb.build / rb.dias * 30;
+    const cota = g && isN(g.cota_gratuita) && g.dias ? g.cota_gratuita / g.dias * 30 : 0;
+    const corte = (Number(precos.corte_run) || 0) / 100, teto = Number(precos.teto_build) || 0, runOt = run * (1 - corte);
+    L.push(`Ritmo de ${dataBR(rb.periodo_inicio)} a ${dataBR(rb.periodo_fim)}: Run ${num(rb.run / rb.dias, 2)} por dia (≈ ${num(run, 0)} por mês), Build ${num(rb.build / rb.dias, 2)} por dia (≈ ${num(build, 0)} por mês).`);
+    L.push("Cenários mensais do planejamento (créditos | após cota gratuita | R$ no plano | R$ em recarga):");
+    [["Ritmo atual", run, build], ["Com teto de Build", run, Math.min(build, teto)], ["Teto de Build e Run otimizado", runOt, Math.min(build, teto)], ["Manutenção", runOt, Math.min(150, teto)], ["Só Run", runOt, 0]].forEach(([n, r, b]) => {
+      const t = r + b, liq = Math.max(t - cota, 0);
+      L.push(`- ${n}: Run ${num(r, 0)} + Build ${num(b, 0)} = ${num(t, 0)} | ${num(liq, 0)} | ${reais(liq * precos.franquia)} | ${reais(liq * precos.recarga)}`);
+    });
+  }
+  const ins = [...snaps].filter((s) => (s.insights || []).length).sort(ordem).pop();
+  if (ins) { L.push(`Insights da captura de ${dataBR(ins.captura)}:`); ins.insights.forEach((i) => L.push(`- [${i.nivel}] ${i.titulo}: ${i.texto}`)); }
+  return L.join("\n");
+}
+function contexto() {
+  return `${INSTR}
+Leitura do painel neste momento:
+${leituraPainel()}
+Planos e preços do Lovable:
+${resumoPlanosTexto()}
+
+Preços configurados: R$ ${precos.franquia} por crédito no plano e R$ ${precos.recarga} em recarga avulsa. Teto de Build planejado: ${precos.teto_build} créditos por mês. Corte de Run esperado: ${precos.corte_run}%.
+Histórico de leituras (JSON, em créditos):
+${JSON.stringify([...snaps].sort(ordem).map(({ id, imagens, criado_em, ...r }) => r))}`;
+}
+function montarPrompt() { $("txtPrompt").value = contexto() + "\n\nMinha pergunta: "; }
+$("bCopiar").onclick = async () => {
+  montarPrompt();
+  try { await navigator.clipboard.writeText($("txtPrompt").value); $("bCopiar").textContent = "Copiado"; setTimeout(() => $("bCopiar").textContent = "Copiar prompt", 1500); }
+  catch (e) { $("txtPrompt").focus(); $("txtPrompt").select(); $("bCopiar").textContent = "Selecionado, use Ctrl+C"; }
+};
+function inlineMd(s) {
+  return esc(s)
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/__([^_]+)__/g, "<strong>$1</strong>")
+    .replace(/(^|[\s(])\*([^*\s][^*]*?)\*(?=[\s).,;:!?]|$)/g, "$1<em>$2</em>");
+}
+function mdBlocos(t) {
+  const L = String(t).replace(/\r/g, "").split("\n"), blocos = [{ t: null, h: "" }];
+  let lista = null, par = [];
+  const cur = () => blocos[blocos.length - 1];
+  const fechaPar = () => { if (par.length) { cur().h += `<p>${par.map(inlineMd).join("<br>")}</p>`; par = []; } };
+  const fechaLista = () => { if (lista) { cur().h += `<${lista.tipo}>${lista.itens.map((i) => `<li>${inlineMd(i)}</li>`).join("")}</${lista.tipo}>`; lista = null; } };
+  const fecha = () => { fechaPar(); fechaLista(); };
+  for (let i = 0; i < L.length; i++) {
+    const l = L[i], tr = l.trim();
+    if (!tr) { fecha(); continue; }
+    if (/^\u0000CODE\d+\u0000$/.test(tr)) { fecha(); cur().h += tr; continue; }
+    if (/^(-{3,}|\*{3,}|_{3,})$/.test(tr) || /^```/.test(tr)) { fecha(); continue; }
+    let m;
+    if ((m = tr.match(/^#{1,6}\s+(.*)$/))) { fecha(); blocos.push({ t: m[1].replace(/[*_#]+/g, "").trim(), h: "" }); continue; }
+    if (tr.startsWith("|") && L[i + 1] && /^\s*\|?\s*:?-{2,}/.test(L[i + 1])) {
+      fecha();
+      const cel = (r) => r.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+      const cab = cel(tr); i += 2; const linhas = [];
+      while (i < L.length && L[i].trim().startsWith("|")) { linhas.push(cel(L[i])); i++; }
+      i--;
+      const num = (c) => /^[-+]?(US\$|R\$)?\s?[\d.,]+%?$/.test(c.replace(/\*\*/g, ""));
+      cur().h += `<div class="tw"><table><thead><tr>${cab.map((c) => `<th>${inlineMd(c)}</th>`).join("")}</tr></thead><tbody>${linhas.map((r) => `<tr>${r.map((c) => `<td${num(c) ? ' class="n"' : ""}>${inlineMd(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+      continue;
+    }
+    if ((m = tr.match(/^[-*•]\s+(.*)$/))) { fechaPar(); if (!lista || lista.tipo !== "ul") { fechaLista(); lista = { tipo: "ul", itens: [] }; } lista.itens.push(m[1]); continue; }
+    if ((m = tr.match(/^\d+[.)]\s+(.*)$/))) { fechaPar(); if (!lista || lista.tipo !== "ol") { fechaLista(); lista = { tipo: "ol", itens: [] }; } lista.itens.push(m[1]); continue; }
+    fechaLista(); par.push(tr.replace(/^>\s?/, ""));
+  }
+  fecha();
+  return blocos.filter((b) => b.t || b.h).map((b) => `<div class="mb">${b.t ? `<h4>${inlineMd(b.t)}</h4>` : ""}${b.h}</div>`).join("");
+}
+function fmtMsg(t) {
+  const codigos = [];
+  const src = String(t).replace(/```([a-zA-Z]*)\n?([\s\S]*?)```/g, (_, lang, body) => { codigos.push({ lang, body: body.trim() }); return `\n\u0000CODE${codigos.length - 1}\u0000\n`; });
+  return mdBlocos(src).replace(/\u0000CODE(\d+)\u0000/g, (_, i) => {
+    const c = codigos[+i], lov = /lovable/i.test(c.lang);
+    return `<div class="code"><div class="cp"><span>${lov ? "Prompt para colar no Lovable" : "Texto para copiar"}</span><button type="button" data-copy="${encodeURIComponent(c.body)}">Copiar</button></div><pre>${esc(c.body)}</pre></div>`;
+  });
+}
+function renderChat() {
+  $("chat").innerHTML = turns.length ? turns.map((t) => `<div class="msg ${t.role === "user" ? "u" : "a"}">${t.role === "user" ? esc(t.content) : fmtMsg(t.content)}</div>`).join("") : `<div class="empty">Discuta melhorias, peça um planejamento ou um prompt para o Lovable. A IA lê todos os números do painel a cada pergunta.</div>`;
+  $("chat").scrollTop = $("chat").scrollHeight;
+}
+$("chat").addEventListener("click", async (e) => {
+  const b = e.target.closest("[data-copy]"); if (!b) return;
+  const txt = decodeURIComponent(b.dataset.copy);
+  try { await navigator.clipboard.writeText(txt); b.textContent = "Copiado"; }
+  catch (err) { const pre = b.closest(".code").querySelector("pre"); const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selecionado, use Ctrl+C"; }
+  setTimeout(() => b.textContent = "Copiar", 1800);
+});
+function abrirDock(on) { $("dockPanel").hidden = !on; if (on) { $("ctxInfo").textContent = ` · lendo ${snaps.length} leituras do painel`; renderChat(); } }
+$("qChat").addEventListener("focus", () => abrirDock(true));
+$("bFechar").onclick = () => abrirDock(false);
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") abrirDock(false); });
+async function perguntar(q) {
+  q = q.trim(); if (!q) return;
+  if (!sample) { st("stChat", "O assistente não está disponível nesta visualização. Use o prompt para outra IA abaixo.", true); return; }
+  if (!snaps.length) { st("stChat", "Guarde pelo menos uma leitura antes de perguntar.", true); return; }
+  abrirDock(true); turns.push({ role: "user", content: q }); renderChat();
+  const bolha = document.createElement("div"); bolha.className = "msg a"; bolha.textContent = "Pensando…"; $("chat").appendChild(bolha);
+  $("bEnviar").disabled = true; $("bParar").hidden = false; st("stChat", "");
+  ctlChat = new AbortController();
+  try {
+    const { text } = await sample([{ role: "user", content: contexto() }, ...turns.slice(-12)], { cache: false, signal: ctlChat.signal, onText: ({ text }) => { bolha.innerHTML = fmtMsg(text); $("chat").scrollTop = $("chat").scrollHeight; } });
+    turns.push({ role: "assistant", content: text });
+  } catch (e) {
+    if (e?.text) turns.push({ role: "assistant", content: e.text + "\n\n(interrompido)" });
+    if (e?.code !== "cancelled") st("stChat", ({ not_granted: "Você não autorizou a IA nesta página.", rate_limited: "Muitas perguntas seguidas. Espere alguns minutos." })[e?.code] || "A resposta falhou. Pergunte de novo.", true);
+  }
+  $("bEnviar").disabled = false; $("bParar").hidden = true; renderChat();
+}
+$("fChat").addEventListener("submit", (e) => { e.preventDefault(); const q = $("qChat").value; $("qChat").value = ""; perguntar(q); });
+$("chips").onclick = (e) => { const b = e.target.closest("[data-q]"); if (b) perguntar(b.dataset.q); };
+$("bParar").onclick = () => ctlChat?.abort();
+$("bLimparChat").onclick = () => { turns = []; renderChat(); };
+renderChat();
+
+
+/* ---------- planos ---------- */
+let planos = null;
+const usd = (v) => (v == null || isNaN(v)) ? "–" : "US$ " + Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+const cot = () => Number(planos?.cotacao) || Number(precos.cotacao) || 5.5;
+const brl = (vUsd) => reais(vUsd * cot());
+function custoRecarga(need) {
+  const pk = (planos?.recargas || []).filter((p) => p.creditos > 0 && p.preco > 0);
+  if (need <= 0 || !pk.length) return { custo: 0, creditos: 0, pacotes: [] };
+  const U = 50, n = Math.ceil(need / U), dp = Array(n + 1).fill(Infinity), cnt = Array(n + 1).fill(Infinity), pick = Array(n + 1).fill(-1);
+  dp[0] = 0; cnt[0] = 0;
+  for (let c = 1; c <= n; c++) pk.forEach((p, i) => {
+    const prev = Math.max(0, c - Math.ceil(p.creditos / U)), v = dp[prev] + p.preco, k = cnt[prev] + 1;
+    if (v < dp[c] - 1e-9 || (Math.abs(v - dp[c]) < 1e-9 && k < cnt[c])) { dp[c] = v; cnt[c] = k; pick[c] = i; }
+  });
+  const pacotes = []; let c = n, cred = 0;
+  while (c > 0 && pick[c] >= 0) { const p = pk[pick[c]]; pacotes.push(p.creditos); cred += p.creditos; c = Math.max(0, c - Math.ceil(p.creditos / U)); }
+  return { custo: dp[n], creditos: cred, pacotes };
+}
+function cenariosNecessidade() {
+  const rb = comRunBuild(), g = com90(); if (!rb) return [];
+  const run = rb.run / rb.dias * 30, build = rb.build / rb.dias * 30;
+  const cota = g && isN(g.cota_gratuita) && g.dias ? g.cota_gratuita / g.dias * 30 : 0;
+  const corte = (Number(precos.corte_run) || 0) / 100, teto = Number(precos.teto_build) || 0, runOt = run * (1 - corte);
+  return [["Ritmo atual", run + build], ["Com teto de Build", run + Math.min(build, teto)], ["Teto de Build e Run otimizado", runOt + Math.min(build, teto)], ["Manutenção", runOt + Math.min(150, teto)], ["Só Run", runOt]]
+    .map(([n, t]) => ({ nome: n, bruto: t, cota, need: Math.max(t - cota, 0) }));
+}
+function opcoesPlano(need) {
+  if (!planos) return [];
+  const ops = [];
+  const add = (tipo, t, mensalUsd, rotuloP) => {
+    const falta = Math.max(need - t.creditos, 0), r = custoRecarga(falta), total = mensalUsd + r.custo;
+    ops.push({ tipo, nome: rotuloP, creditos: t.creditos, mensal: mensalUsd, recarga: r, total, sobra: Math.max(t.creditos + r.creditos - need, 0),
+      atual: planos.atual && planos.atual.plano === tipo.split(" ")[0] && planos.atual.creditos === t.creditos && !/anual/i.test(tipo) });
+  };
+  (planos.pro || []).forEach((t) => { add("Pro mensal", t, t.preco, `Pro ${num(t.creditos, 0)}`); add("Pro anual", t, t.preco * (12 - (planos.anual_meses_gratis || 0)) / 12, `Pro ${num(t.creditos, 0)} anual`); });
+  (planos.business || []).forEach((t) => add("Business mensal", t, t.preco, `Business ${num(t.creditos, 0)}`));
+  return ops.sort((a, b) => a.total - b.total || a.sobra - b.sobra);
+}
+function renderRec() {
+  const cens = cenariosNecessidade();
+  const sel = $("recCen").value;
+  $("recCen").innerHTML = cens.map((c, i) => `<option value="${i}">${esc(c.nome)} (≈ ${num(c.need, 0)} créditos)</option>`).join("");
+  if (sel && cens[sel]) $("recCen").value = sel;
+  const c = cens[$("recCen").value || 0];
+  if (!c || !planos) { $("recVeredito").innerHTML = ""; $("tRec").innerHTML = ""; $("notaRec").textContent = planos ? "O cálculo precisa de uma leitura com Run e Build separados." : "Cadastre a tabela de planos na aba Planos."; return; }
+  const ops = opcoesPlano(c.need), mensais = ops.filter((o) => !/anual/i.test(o.tipo));
+  const best = mensais[0], bestAnual = ops.find((o) => /anual/i.test(o.tipo)), atual = ops.find((o) => o.atual);
+  const desc = (o) => `${o.nome}${o.recarga.custo ? ` + recarga de ${o.recarga.pacotes.map((p) => num(p, 0)).join(" + ")}` : ""}`;
+  const eco = atual ? atual.total - best.total : 0;
+  const acao = !atual ? "Contratar" : best.atual ? "Manter o plano atual" : best.creditos > atual.creditos ? "Fazer upgrade para" : best.creditos < atual.creditos ? "Fazer downgrade para" : "Trocar para";
+  $("recVeredito").innerHTML = `<div class="ver"><span>Para ${esc(c.nome.toLowerCase())}, cerca de ${num(c.need, 0)} créditos por mês já descontada a cota gratuita</span>
+    <b>${acao}${best.atual && !best.recarga.custo ? "" : " " + esc(best.atual ? (best.recarga.custo ? "e comprar recarga de " + best.recarga.pacotes.map((p) => num(p, 0)).join(" + ") : "") : desc(best))}</b>
+    <span>${usd(best.total)} por mês, ${brl(best.total)}${atual && !best.atual && eco > 0.5 ? ` · ${usd(eco)} (${brl(eco)}) a menos que o plano atual com recargas` : ""}${bestAnual && bestAnual.total < best.total - 0.5 ? ` · no anual sai ${usd(bestAnual.total)} por mês com ${esc(bestAnual.nome)}` : ""}</span></div>`;
+  // tabela por custo, com o plano atual no meio: até 3 opções mais baratas acima e 3 mais caras abaixo
+  const pool = [...new Set([...mensais.filter((o) => !/Business/.test(o.tipo)), ...(bestAnual ? [bestAnual] : []), ...ops.filter((o) => /Business/.test(o.tipo)).slice(0, 1)])].sort((a, b) => a.total - b.total);
+  let linhas;
+  if (atual) {
+    const i = pool.indexOf(atual);
+    linhas = pool.slice(Math.max(0, i - 3), i + 4);
+    if (!linhas.includes(best)) linhas.unshift(best);
+    if (bestAnual && !linhas.includes(bestAnual)) linhas.push(bestAnual);
+    linhas.sort((a, b) => a.total - b.total);
+  } else linhas = pool.slice(0, 7);
+  $("tRec").innerHTML = `<thead><tr><th>Opção</th><th class="n">Assinatura</th><th class="n">Recarga</th><th class="n">Total por mês</th><th class="n">Em reais</th><th class="n">Sobra</th></tr></thead><tbody>` +
+    linhas.map((o) => `<tr class="${o === best ? "best" : ""} ${o.atual ? "cur" : ""}"><td>${esc(o.nome)}${o.atual ? ' <span class="tagAtual">Plano atual</span>' : ""}${o === best && !o.atual ? ' <span class="tagMelhor">Mais econômico</span>' : ""}</td><td class="n">${usd(o.mensal)}</td><td class="n">${o.recarga.custo ? usd(o.recarga.custo) + ` <span class="status">(${o.recarga.pacotes.map((p) => num(p, 0)).join("+")})</span>` : "–"}</td><td class="n"><b>${usd(o.total)}</b></td><td class="n">${brl(o.total)}</td><td class="n">${num(o.sobra, 0)}</td></tr>`).join("") + "</tbody>";
+  $("notaRec").textContent = `Recarga escolhida pela combinação mais barata de pacotes. "Sobra" são créditos comprados além da necessidade; no Pro eles acumulam para o mês seguinte. Anual considera ${planos.anual_meses_gratis || 0} meses grátis e exige pagar 12 meses. Cotação de R$ ${num(cot(), 2)}.`;
+}
+$("recCen").onchange = renderRec;
+function resumoPlanosTexto() {
+  if (!planos) return "Tabela de planos não cadastrada.";
+  const L = [`Plano atual: ${planos.atual?.plano} ${planos.atual?.creditos} créditos por US$ ${planos.atual?.preco}/mês. Cotação R$ ${cot()}.`,
+    "Pro mensal: " + (planos.pro || []).map((t) => `${t.creditos}=US$${t.preco}`).join(", "),
+    "Business mensal: " + (planos.business || []).map((t) => `${t.creditos}=US$${t.preco}`).join(", "),
+    "Recargas avulsas Pro: " + (planos.recargas || []).map((t) => `${t.creditos}=US$${t.preco}`).join(", "),
+    `Anual: ${planos.anual_meses_gratis || 0} meses grátis. ${planos.observacoes || ""}`, "Comparação calculada por cenário (melhores opções, custo mensal em US$):"];
+  cenariosNecessidade().forEach((c) => { const o = opcoesPlano(c.need).slice(0, 4); L.push(`- ${c.nome} (precisa ≈ ${Math.round(c.need)} créditos/mês após cota): ` + o.map((x) => `${x.nome}${x.recarga.custo ? " + recarga " + x.recarga.pacotes.join("+") : ""} = US$ ${Math.round(x.total)}`).join("; ")); });
+  return L.join("\n");
+}
+$("bRecIA").onclick = async () => {
+  if (!sample) { st("stRecIA", "A IA não está disponível nesta visualização.", true); return; }
+  $("bRecIA").disabled = true; $("recIA").hidden = false; $("recIA").textContent = "Pensando…"; st("stRecIA", "");
+  const q = `Com base no painel, recomende a melhor forma de contratar créditos: manter, fazer upgrade ou downgrade do plano, comprar recarga avulsa, ou mudar para anual. Considere que o Build é temporário e vai cair quando o desenvolvimento terminar, que o Run é fixo, que no Pro os créditos não usados acumulam, e que não pode faltar crédito para os sistemas no ar. Dê: a recomendação para este mês, a recomendação para depois do desenvolvimento, quando revisar, e o risco de cada escolha. Seja objetivo, com números em US$ e R$.`;
+  try { const { text } = await sample([{ role: "user", content: contexto() }, { role: "user", content: q }], { onText: ({ text }) => { $("recIA").innerHTML = fmtMsg(text); }, cache: { gcTime: 600000 } }); $("recIA").innerHTML = fmtMsg(text); }
+  catch (e) { $("recIA").textContent = e?.text || ""; if (e?.code !== "cancelled") st("stRecIA", e?.code === "not_granted" ? "Você não autorizou a IA nesta página." : "A análise falhou. Tente de novo.", true); }
+  $("bRecIA").disabled = false;
+};
+function renderPlanos() {
+  if (!planos) { $("plAtual").innerHTML = `<div class="empty"><b>Tabela de planos não cadastrada</b>Cole a tabela em JSON abaixo e salve.</div>`; return; }
+  const a = planos.atual || {};
+  $("plAtualiz").textContent = planos.atualizado_em ? "preços de " + dataBR(planos.atualizado_em) : "";
+  $("plAtual").innerHTML = `<div class="kvs"><div><small>Plano</small><strong>${esc(a.plano || "–")} ${num(a.creditos, 0)}</strong></div><div><small>Assinatura</small><strong>${usd(a.preco)}</strong><small>${brl(a.preco)} por mês</small></div><div><small>Preço por crédito</small><strong>US$ ${num(a.preco / a.creditos, 3)}</strong><small>R$ ${num(a.preco / a.creditos * cot(), 3)}</small></div><div><small>Recarga avulsa</small><strong>US$ ${num((planos.recargas || [])[0]?.preco / (planos.recargas || [])[0]?.creditos, 2)}</strong><small>por crédito nos pacotes pequenos</small></div></div>${planos.observacoes ? `<p class="nt">${esc(planos.observacoes)}</p>` : ""}`;
+  const tab = (l, mensal) => `<thead><tr><th>Créditos</th><th class="n">${mensal ? "Por mês" : "Preço"}</th><th class="n">Em reais</th><th class="n">US$ por crédito</th></tr></thead><tbody>` + (l || []).map((t) => `<tr class="${mensal && a.creditos === t.creditos && mensal === a.plano ? "cur" : ""}"><td>${num(t.creditos, 0)}</td><td class="n">${usd(t.preco)}</td><td class="n">${brl(t.preco)}</td><td class="n">${num(t.preco / t.creditos, 3)}</td></tr>`).join("") + "</tbody>";
+  $("tPro").innerHTML = tab(planos.pro, "Pro"); $("tBiz").innerHTML = tab(planos.business, "Business"); $("tRecarga").innerHTML = tab(planos.recargas, null);
+  $("plCot").value = cot();
+  if (document.activeElement !== $("plJson")) { const { cotacao, ...r } = planos; $("plJson").value = JSON.stringify(r, null, 2); }
+}
+$("bPlSalvar").onclick = async () => {
+  let r; try { r = JSON.parse($("plJson").value); } catch (e) { st("stPl", "O JSON tem um erro de formato.", true); return; }
+  if (!db) return;
+  try { await db.doc("config/planos").set({ ...r, cotacao: Number($("plCot").value) || 5.5 }); st("stPl", "Planos salvos."); } catch (e) { st("stPl", "Sem permissão para salvar.", true); }
+};
+
+/* ---------- inicialização ---------- */
+function tudo() { renderPainel(); renderRec(); renderPlanos(); opcoesEvo(); renderEvo(); renderLista(); opcoesCmp(); renderCmp(); if (!$("p-assistente").hidden) montarPrompt(); }
+tudo();
+(async () => {
+  const c = window.claude;
+  if (!c?.use) { $("sub").textContent = "Abra esta página no Claude para ver o histórico."; return; }
+  [db, assets, sample] = await Promise.all([c.use("db"), c.use("assets"), c.use("sample")]);
+  if (sample) { try { limits = await sample.limits(); } catch (e) {} }
+  $("limImg").textContent = limits?.images ? `Até ${limits.images.maxCount} imagens por leitura.` : sample ? "Esta visualização não envia imagens: cole o texto da análise." : "";
+  if (!db) { $("sub").textContent = "Entre na sua conta Claude para ver o histórico."; return; }
+  db.doc("config/precos").onSnapshot((d) => { if (d.exists) { precos = { ...precos, ...d.data() }; renderPlano(comRunBuild(), com90()); renderRec(); } }, () => {});
+  db.doc("config/planos").onSnapshot((d) => { planos = d.exists ? d.data() : null; renderRec(); renderPlanos(); }, () => {});
+  db.collection("snapshots").onSnapshot((q) => { snaps = q.docs.map((d) => ({ id: d.id, ...d.data() })); tudo(); },
+    () => { $("sub").textContent = "Não foi possível carregar o histórico."; });
+})();
+})();
+</script>

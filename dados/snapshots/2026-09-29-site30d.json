@@ -1,0 +1,27 @@
+{
+  "build": null,
+  "captura": "2026-09-29",
+  "cota_gratuita": null,
+  "criado_em": "2026-09-29T12:00:01Z",
+  "dias": 30,
+  "imagens": [],
+  "insights": [],
+  "periodo_fim": "2026-09-29",
+  "periodo_inicio": "2026-08-31",
+  "projetos": [
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "ALPHA FM - SITE",
+      "run": null,
+      "total": 692,
+      "visitantes": 326759
+    }
+  ],
+  "rotulo": "Site 30 dias",
+  "run": null,
+  "run_categorias": {},
+  "run_itens": [],
+  "saldo": null,
+  "total": null
+}

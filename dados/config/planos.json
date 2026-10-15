@@ -1,0 +1,141 @@
+{
+  "anual_meses_gratis": 2,
+  "atual": {
+    "creditos": 800,
+    "plano": "Pro",
+    "preco": 200
+  },
+  "atualizado_em": "2026-10-15",
+  "business": [
+    {
+      "creditos": 100,
+      "preco": 50
+    },
+    {
+      "creditos": 200,
+      "preco": 100
+    },
+    {
+      "creditos": 400,
+      "preco": 200
+    },
+    {
+      "creditos": 800,
+      "preco": 400
+    },
+    {
+      "creditos": 1200,
+      "preco": 588
+    },
+    {
+      "creditos": 2000,
+      "preco": 960
+    },
+    {
+      "creditos": 3000,
+      "preco": 1410
+    },
+    {
+      "creditos": 4000,
+      "preco": 1840
+    },
+    {
+      "creditos": 5000,
+      "preco": 2250
+    }
+  ],
+  "cotacao": 5.5,
+  "observacoes": "Pro inclui acúmulo de créditos não usados e recargas sob demanda. Recarga avulsa é compra única, sem assinatura. Em 15/10 havia 58,6 créditos com vencimento em 29/11.",
+  "pro": [
+    {
+      "creditos": 100,
+      "preco": 25
+    },
+    {
+      "creditos": 200,
+      "preco": 50
+    },
+    {
+      "creditos": 400,
+      "preco": 100
+    },
+    {
+      "creditos": 800,
+      "preco": 200
+    },
+    {
+      "creditos": 1200,
+      "preco": 294
+    },
+    {
+      "creditos": 2000,
+      "preco": 480
+    },
+    {
+      "creditos": 3000,
+      "preco": 705
+    },
+    {
+      "creditos": 4000,
+      "preco": 920
+    },
+    {
+      "creditos": 5000,
+      "preco": 1125
+    }
+  ],
+  "recargas": [
+    {
+      "creditos": 50,
+      "preco": 15
+    },
+    {
+      "creditos": 100,
+      "preco": 30
+    },
+    {
+      "creditos": 150,
+      "preco": 45
+    },
+    {
+      "creditos": 200,
+      "preco": 60
+    },
+    {
+      "creditos": 250,
+      "preco": 75
+    },
+    {
+      "creditos": 300,
+      "preco": 90
+    },
+    {
+      "creditos": 400,
+      "preco": 120
+    },
+    {
+      "creditos": 500,
+      "preco": 150
+    },
+    {
+      "creditos": 1000,
+      "preco": 294
+    },
+    {
+      "creditos": 2000,
+      "preco": 576
+    },
+    {
+      "creditos": 3000,
+      "preco": 846
+    },
+    {
+      "creditos": 5000,
+      "preco": 1350
+    },
+    {
+      "creditos": 10000,
+      "preco": 2700
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "build": 1387,
+  "captura": "2026-09-29",
+  "cota_gratuita": null,
+  "criado_em": "2026-09-29T12:00:00Z",
+  "dias": 90,
+  "imagens": [],
+  "insights": [],
+  "periodo_fim": "2026-09-29",
+  "periodo_inicio": "2026-07-02",
+  "projetos": [
+    {
+      "build": 467,
+      "cota_gratuita": null,
+      "nome": "ALPHA FM - SITE",
+      "run": 649,
+      "total": 1116,
+      "visitantes": null
+    },
+    {
+      "build": 281,
+      "cota_gratuita": null,
+      "nome": "ALPHA FM - PLAYER",
+      "run": 349,
+      "total": 630,
+      "visitantes": null
+    },
+    {
+      "build": 263,
+      "cota_gratuita": null,
+      "nome": "ALPHA FM - PROMOÇÕES",
+      "run": 0.37,
+      "total": 263,
+      "visitantes": null
+    },
+    {
+      "build": 163,
+      "cota_gratuita": null,
+      "nome": "AGENTES - ALPHA FM",
+      "run": 24.9,
+      "total": 187,
+      "visitantes": null
+    },
+    {
+      "build": 125,
+      "cota_gratuita": null,
+      "nome": "LUDOVICO COMMAND CENTER OPERATION",
+      "run": 0.26,
+      "total": 125,
+      "visitantes": null
+    },
+    {
+      "build": 53.9,
+      "cota_gratuita": null,
+      "nome": "CONNEXT - SITE",
+      "run": 0.42,
+      "total": 54.3,
+      "visitantes": null
+    },
+    {
+      "build": 20.7,
+      "cota_gratuita": null,
+      "nome": "Deleted project",
+      "run": 0,
+      "total": 20.7,
+      "visitantes": null
+    },
+    {
+      "build": 12.2,
+      "cota_gratuita": null,
+      "nome": "ALPHA FM DASHBOARD",
+      "run": 0.24,
+      "total": 12.5,
+      "visitantes": null
+    },
+    {
+      "build": 1.8,
+      "cota_gratuita": null,
+      "nome": "ALPHA FM - FINANCEIRO",
+      "run": 0.24,
+      "total": 2.04,
+      "visitantes": null
+    }
+  ],
+  "rotulo": "90 dias",
+  "run": 1027,
+  "run_categorias": {
+    "banco": 349,
+    "funcoes": 9.48,
+    "ia": 0.05,
+    "realtime": 1.76,
+    "rede": 666,
+    "storage": 1.17
+  },
+  "run_itens": [],
+  "saldo": 171.03,
+  "total": 2414
+}

@@ -1,0 +1,141 @@
+{
+  "build": 426.59,
+  "captura": "2026-10-15",
+  "cota_gratuita": null,
+  "criado_em": "2026-10-15T17:23:42.761Z",
+  "dias": 14,
+  "imagens": [
+    "ac33b39bcf099e2d9663a7ce2f7cc375",
+    "863936830d9c1a9f1d9ef9d370fb63e1",
+    "d135591f28c0eaaa9b6d2935fe453f33",
+    "dff3847742d6a67219b3aac0f3508919"
+  ],
+  "insights": [
+    {
+      "nivel": "critico",
+      "texto": "Nos últimos 14 dias o Run foi de 273,7 créditos, cerca de 19,6 por dia, contra 1.027 em 90 dias até 29/09 (cerca de 11,4 por dia). Projetado para 30 dias, isso dá aproximadamente 587 créditos fixos por mês, mesmo sem nenhum desenvolvimento.",
+      "titulo": "Run diário subiu cerca de 71%"
+    },
+    {
+      "nivel": "critico",
+      "texto": "Banco custou 123,88 créditos em 14 dias (8,85 por dia), contra 349 em 90 dias no histórico (3,88 por dia). As três instâncias somam cerca de 8,4 créditos por dia (Small 4,02, Micro 2,48, Pico 1,86), perto de 250 por mês. Rebaixar o ALPHA FM - SITE de Small para Micro economizaria cerca de 1,5 crédito por dia, uns 46 por mês.",
+      "titulo": "Bancos 24/7 dobraram o custo fixo"
+    },
+    {
+      "nivel": "atencao",
+      "texto": "O SITE gastou 163,92 créditos de Run em 14 dias (11,7 por dia), contra 649 em 90 dias no histórico (7,2 por dia). Só a transferência em cache somou 576,8 GB e 86,51 créditos; vale revisar compressão de mídia e uso de CDN externa.",
+      "titulo": "Rede do ALPHA FM - SITE lidera o Run"
+    },
+    {
+      "nivel": "atencao",
+      "texto": "O ALPHA FM - PLAYER teve 76,3 créditos de Run em 14 dias (5,45 por dia), contra 349 em 90 dias antes (3,88 por dia). São 87,3 GB de transferência direta (39,3 créditos) e 77.676 chamadas de funções, o que sugere polling frequente ou áudio passando pelo backend.",
+      "titulo": "PLAYER com egress direto e muitas funções"
+    },
+    {
+      "nivel": "atencao",
+      "texto": "O AGENTES - ALPHA FM teve 27,47 créditos de Run em 14 dias, mais do que os 24,9 de Run registrados em 90 dias até 29/09. Com apenas 32 visitantes, o banco Pico ligado 24 horas (1,86 por dia) merece ser revisto.",
+      "titulo": "AGENTES ganhou custo fixo novo"
+    },
+    {
+      "nivel": "positivo",
+      "texto": "O Build foi de 426,59 créditos em 14 dias (30,5 por dia), contra 1.387 em 90 dias no histórico (15,4 por dia), refletindo a fase de desenvolvimento. Projetos como ALPHA FM - PROMOÇÕES (291 créditos, quase todo Build) tendem a zerar esse gasto ao estabilizar. A cota gratuita cobriu 288 de 3.270 créditos em 90 dias, cerca de 8,8%.",
+      "titulo": "Build alto, mas temporário"
+    }
+  ],
+  "periodo_fim": "2026-10-15",
+  "periodo_inicio": "2026-10-02",
+  "projetos": [
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "ALPHA FM - SITE",
+      "run": 163.92,
+      "total": null,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "ALPHA FM - PLAYER",
+      "run": 76.3,
+      "total": null,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "AGENTES - ALPHA FM",
+      "run": 27.47,
+      "total": null,
+      "visitantes": null
+    }
+  ],
+  "rotulo": "Run e Build 14 dias",
+  "run": 273.7,
+  "run_categorias": {
+    "banco": 123.88,
+    "funcoes": 3.87,
+    "ia": 2.05,
+    "realtime": 0.00001,
+    "rede": 143.68,
+    "storage": 0.21
+  },
+  "run_itens": [
+    {
+      "creditos": 86.51,
+      "item": "Transferência em cache",
+      "projeto": "ALPHA FM - SITE",
+      "volume": "576,8 GB"
+    },
+    {
+      "creditos": 58.86,
+      "item": "Banco Small, 24 horas",
+      "projeto": "ALPHA FM - SITE",
+      "volume": "351 h"
+    },
+    {
+      "creditos": 17.86,
+      "item": "Transferência direta",
+      "projeto": "ALPHA FM - SITE",
+      "volume": "39,7 GB"
+    },
+    {
+      "creditos": 0.69,
+      "item": "Workers e storage",
+      "projeto": "ALPHA FM - SITE",
+      "volume": ""
+    },
+    {
+      "creditos": 39.3,
+      "item": "Transferência direta",
+      "projeto": "ALPHA FM - PLAYER",
+      "volume": "87,3 GB"
+    },
+    {
+      "creditos": 36.22,
+      "item": "Banco Micro, 24 horas",
+      "projeto": "ALPHA FM - PLAYER",
+      "volume": "351 h"
+    },
+    {
+      "creditos": 0.78,
+      "item": "Funções (77.676 chamadas)",
+      "projeto": "ALPHA FM - PLAYER",
+      "volume": ""
+    },
+    {
+      "creditos": 27.17,
+      "item": "Banco Pico, 24 horas",
+      "projeto": "AGENTES - ALPHA FM",
+      "volume": "351 h"
+    },
+    {
+      "creditos": 0.3,
+      "item": "Workers",
+      "projeto": "AGENTES - ALPHA FM",
+      "volume": "30 dias"
+    }
+  ],
+  "saldo": null,
+  "total": 700.29
+}

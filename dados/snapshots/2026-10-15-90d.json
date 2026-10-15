@@ -1,0 +1,187 @@
+{
+  "build": null,
+  "captura": "2026-10-15",
+  "cota_gratuita": 288,
+  "criado_em": "2026-10-15T17:00:00Z",
+  "dias": 90,
+  "imagens": [],
+  "insights": [],
+  "periodo_fim": "2026-10-15",
+  "periodo_inicio": "2026-07-18",
+  "projetos": [
+    {
+      "build": null,
+      "cota_gratuita": 122,
+      "nome": "ALPHA FM - SITE",
+      "run": null,
+      "total": 1305,
+      "visitantes": 1024007
+    },
+    {
+      "build": null,
+      "cota_gratuita": 89.1,
+      "nome": "ALPHA FM - PLAYER",
+      "run": null,
+      "total": 735,
+      "visitantes": 862243
+    },
+    {
+      "build": null,
+      "cota_gratuita": 3.44,
+      "nome": "ALPHA FM - PROMOÇÕES",
+      "run": null,
+      "total": 290,
+      "visitantes": 29
+    },
+    {
+      "build": null,
+      "cota_gratuita": 11.9,
+      "nome": "AGENTES - ALPHA FM",
+      "run": null,
+      "total": 222,
+      "visitantes": 32
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "LUDOVICO COMMAND CENTER OPERATION",
+      "run": null,
+      "total": 219,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "ALPHA CCO IA",
+      "run": null,
+      "total": 93,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "CONNEXT - SITE",
+      "run": null,
+      "total": 54.5,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "Genius AI",
+      "run": null,
+      "total": 51.4,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "ALPHA CRM",
+      "run": null,
+      "total": 39.8,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "ALPHA PI SCANNER",
+      "run": null,
+      "total": 38.7,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "CONNEXT PLANNER ATTACK",
+      "run": null,
+      "total": 38.6,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "LOVEABLE METRICS HUB",
+      "run": null,
+      "total": 37.5,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "RADIO DISNEY PROMOCAO",
+      "run": null,
+      "total": 36,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "CRPJA - CLOUD RADIO PROGRAMMING IA",
+      "run": null,
+      "total": 30.6,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "ALPHA FM - FINANCEIRO",
+      "run": null,
+      "total": 28.9,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "Deleted project",
+      "run": null,
+      "total": 20.7,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "ALPHA FM DASHBOARD",
+      "run": null,
+      "total": 14.1,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "Bauny Agentes",
+      "run": null,
+      "total": 8.48,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "VIRTU SCAN",
+      "run": null,
+      "total": 4.11,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "DESAFIO MUSICAL - GAME",
+      "run": null,
+      "total": 0.72,
+      "visitantes": null
+    },
+    {
+      "build": null,
+      "cota_gratuita": null,
+      "nome": "PIX PAY - PARAGUAY",
+      "run": null,
+      "total": 0.7,
+      "visitantes": null
+    }
+  ],
+  "rotulo": "90 dias",
+  "run": null,
+  "run_categorias": {},
+  "run_itens": [],
+  "saldo": null,
+  "total": 3270
+}
