@@ -1,0 +1,65 @@
+{
+  "rotulo": "Novembro até 25/11 (gráfico mensal, aprox.)",
+  "captura": "2026-11-25",
+  "periodo_inicio": "2026-11-01",
+  "periodo_fim": "2026-11-25",
+  "dias": 25,
+  "total": 643,
+  "build": 186,
+  "run": 457,
+  "cota_gratuita": null,
+  "saldo": null,
+  "imagens": [],
+  "insights": [
+    {
+      "nivel": "positivo",
+      "titulo": "Build caiu cerca de 70%",
+      "texto": "Novembro está em cerca de 7,4 créditos de Build por dia, contra 23,9 em outubro e 29,5 em setembro. O Site quase não teve Build no mês (cerca de 6 créditos)."
+    },
+    {
+      "nivel": "positivo",
+      "titulo": "O mês cabe no Pro 800 sem recarga",
+      "texto": "No ritmo de novembro o workspace consome cerca de 770 créditos por mês. Descontada a cota gratuita (cerca de 95 por mês), a necessidade fica perto de 676, dentro dos 800 do plano, com sobra que acumula."
+    },
+    {
+      "nivel": "atencao",
+      "titulo": "O Run não caiu e já é 71% do consumo",
+      "texto": "O Run segue em cerca de 18,3 créditos por dia, o mesmo de outubro (18,5). O Site está em 11,2 por dia e o Player em 5,3. Os cortes de tráfego do Site e do Player ainda não foram feitos e são o próximo ganho."
+    },
+    {
+      "nivel": "atencao",
+      "titulo": "Projetos novos se multiplicaram",
+      "texto": "Entraram 8 projetos em 90 dias (CRP Gestão Integrada, Wificonn Plataforma e Hotspot, Pedágio GC2, Digital Connection Grove, Clear Lead, Bazar Fashion, Lovable Brain), somando cerca de 288 créditos. O CRP.IA subiu de 30,6 para 119."
+    },
+    {
+      "nivel": "atencao",
+      "titulo": "Agentes subiu para 300 só com banco ligado",
+      "texto": "Agentes foi de 222 para 300 créditos na janela de 90 dias sem desenvolvimento novo: é o banco Pico ligado 24 horas, cerca de 56 créditos por mês para uma ferramenta interna."
+    },
+    {
+      "nivel": "positivo",
+      "titulo": "Site estável com mais de 1 milhão de visitantes",
+      "texto": "O Site mantém o Run em torno de 11,2 por dia desde as otimizações de 28/09 e chegou a 1.069.246 visitantes em 90 dias."
+    }
+  ],
+  "run_categorias": {},
+  "run_itens": [],
+  "projetos": [
+    {
+      "nome": "ALPHA FM - SITE",
+      "total": 286,
+      "build": 6,
+      "run": 280,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA FM - PLAYER",
+      "total": 161,
+      "build": 28,
+      "run": 133,
+      "cota_gratuita": null,
+      "visitantes": null
+    }
+  ]
+}

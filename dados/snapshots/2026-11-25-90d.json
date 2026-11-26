@@ -1,0 +1,218 @@
+{
+  "rotulo": "90 dias",
+  "captura": "2026-11-25",
+  "periodo_inicio": "2026-08-28",
+  "periodo_fim": "2026-11-25",
+  "dias": 90,
+  "total": 3821,
+  "build": null,
+  "run": null,
+  "cota_gratuita": 284,
+  "saldo": null,
+  "imagens": [],
+  "insights": [],
+  "run_categorias": {},
+  "run_itens": [],
+  "projetos": [
+    {
+      "nome": "ALPHA FM - SITE",
+      "total": 1423,
+      "build": null,
+      "run": null,
+      "cota_gratuita": 98.4,
+      "visitantes": 1069246
+    },
+    {
+      "nome": "ALPHA FM - PLAYER",
+      "total": 689,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA FM - PROMOÇÕES",
+      "total": 300,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "AGENTES - ALPHA FM",
+      "total": 300,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "LUDOVICO COMMAND CENTER OPERATION",
+      "total": 220,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "CRP.IA - CLOUD RADIO PROGRAMMING IA",
+      "total": 119,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA CCO IA",
+      "total": 93.5,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "CRP GESTÃO INTEGRADA",
+      "total": 65.8,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "CONNEXT - SITE",
+      "total": 54.9,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "Genius AI",
+      "total": 52,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "WIFICONN PLATAFORMA",
+      "total": 48.2,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA CRM",
+      "total": 43.2,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "RADIO DISNEY PROMOCAO",
+      "total": 41.1,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA PI SCANNER",
+      "total": 39.2,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "CONNEXT PLANNER ATTACK",
+      "total": 38.9,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "PEDAGIO GRUPO GC2",
+      "total": 38.4,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "LOVEABLE METRICS HUB",
+      "total": 37.6,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "Digital Connection Grove",
+      "total": 35.5,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "CLEAR LEAD OPTIMIZATION",
+      "total": 29.3,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA FM - FINANCEIRO",
+      "total": 28.9,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "Bazar Fashion",
+      "total": 26.9,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "WIFICONN HOTSPOT",
+      "total": 25.1,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "Deleted project",
+      "total": 20.7,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "LOVABLE BRAIN",
+      "total": 19.4,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA FM DASHBOARD",
+      "total": 14.4,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    }
+  ]
+}

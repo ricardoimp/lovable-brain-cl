@@ -1,4 +1,10 @@
-<title>LOVEABLE GASTOS E GESTÃO</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>[hidden]{display:none!important}</style>
+<title>LOVEABLE BRAIN</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,6 +212,8 @@ tr.best td{background:rgba(61,214,140,.08)}
 .kvs strong{font-size:1.2rem}
 </style>
 
+</head>
+<body>
 <header class="hd"><div class="wrap">
   <div class="brand"><span class="mark" aria-hidden="true"></span><span class="wm">Lovable</span><span class="tag">Minha economia adorável</span></div>
   <h1>Controle de créditos e gastos</h1>
@@ -429,7 +437,7 @@ function ultimaCaptura() {
   return snaps.filter((s) => (s.captura || s.periodo_fim) === cap);
 }
 function comRunBuild() { return [...snaps].filter((s) => isN(s.run) && isN(s.build) && s.dias).sort(ordem).pop(); }
-function com90() { return [...snaps].filter((s) => isN(s.total) && (s.projetos || []).length).sort((a, b) => ordem(a, b) || (a.dias - b.dias)).pop(); }
+function com90() { const l = [...snaps].filter((s) => isN(s.total) && (s.projetos || []).length >= 5); const p = l.filter((s) => s.dias <= 120); return (p.length ? p : l).sort((a, b) => ordem(a, b) || (a.dias - b.dias)).pop(); }
 
 /* ---------- painel ---------- */
 function renderPainel() {
@@ -971,12 +979,29 @@ $("bPlSalvar").onclick = async () => {
   try { await db.doc("config/planos").set({ ...r, cotacao: Number($("plCot").value) || 5.5 }); st("stPl", "Planos salvos."); } catch (e) { st("stPl", "Sem permissão para salvar.", true); }
 };
 
+/* ---------- modo leitura (fora do Claude, ex.: Vercel) ---------- */
+async function modoLeitura() {
+  try {
+    const r = await fetch("dados.json", { cache: "no-store" });
+    if (!r.ok) throw new Error();
+    const d = await r.json();
+    snaps = (d.snapshots || []).map((s) => ({ ...s, imagens: [] }));
+    if (d.precos) precos = { ...precos, ...d.precos };
+    planos = d.planos || null;
+    tudo();
+    $("sub").textContent += ` · modo leitura, dados exportados em ${dataBR(d.exportado_em)}`;
+    ["t-atualizar", "t-assistente"].forEach((id) => { $(id).hidden = true; });
+    $("dock").hidden = true; document.body.style.paddingBottom = "0";
+    ["bRecIA", "pSalvar", "bPlSalvar"].forEach((id) => { if ($(id)) $(id).hidden = true; });
+    document.querySelectorAll("[data-del]").forEach((b) => b.hidden = true);
+  } catch (e) { $("sub").textContent = "Não foi possível carregar os dados."; }
+}
 /* ---------- inicialização ---------- */
 function tudo() { renderPainel(); renderRec(); renderPlanos(); opcoesEvo(); renderEvo(); renderLista(); opcoesCmp(); renderCmp(); if (!$("p-assistente").hidden) montarPrompt(); }
 tudo();
 (async () => {
   const c = window.claude;
-  if (!c?.use) { $("sub").textContent = "Abra esta página no Claude para ver o histórico."; return; }
+  if (!c?.use) { await modoLeitura(); return; }
   [db, assets, sample] = await Promise.all([c.use("db"), c.use("assets"), c.use("sample")]);
   if (sample) { try { limits = await sample.limits(); } catch (e) {} }
   $("limImg").textContent = limits?.images ? `Até ${limits.images.maxCount} imagens por leitura.` : sample ? "Esta visualização não envia imagens: cole o texto da análise." : "";
@@ -988,3 +1013,6 @@ tudo();
 })();
 })();
 </script>
+
+</body>
+</html>

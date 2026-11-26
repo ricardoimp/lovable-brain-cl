@@ -1,0 +1,218 @@
+{
+  "rotulo": "Todo o período (desde mar/2026)",
+  "captura": "2026-11-25",
+  "periodo_inicio": "2026-03-01",
+  "periodo_fim": "2026-11-25",
+  "dias": 270,
+  "total": 5663,
+  "build": null,
+  "run": null,
+  "cota_gratuita": 572,
+  "saldo": null,
+  "imagens": [],
+  "insights": [],
+  "run_categorias": {},
+  "run_itens": [],
+  "projetos": [
+    {
+      "nome": "ALPHA FM - SITE",
+      "total": 2548,
+      "build": null,
+      "run": null,
+      "cota_gratuita": 256,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA FM - PLAYER",
+      "total": 995,
+      "build": null,
+      "run": null,
+      "cota_gratuita": 122,
+      "visitantes": null
+    },
+    {
+      "nome": "AGENTES - ALPHA FM",
+      "total": 300,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA FM - PROMOÇÕES",
+      "total": 300,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "LUDOVICO COMMAND CENTER OPERATION",
+      "total": 220,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "CRP.IA - CLOUD RADIO PROGRAMMING IA",
+      "total": 119,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA FM - INSIGHTS",
+      "total": 107,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA CCO IA",
+      "total": 93.5,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "CRP GESTÃO INTEGRADA",
+      "total": 65.8,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "PEDAGIO GRUPO GC2",
+      "total": 65.4,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "CONNEXT - SITE",
+      "total": 54.9,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "Genius AI",
+      "total": 52,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA FM - FINANCEIRO",
+      "total": 51.4,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "WIFICONN PLATAFORMA",
+      "total": 48.2,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA CRM",
+      "total": 43.2,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "A-HUMANS",
+      "total": 41.5,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "GTI ONE",
+      "total": 41.2,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "RADIO DISNEY PROMOCAO",
+      "total": 41.1,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA PI SCANNER",
+      "total": 39.2,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "CONNEXT PLANNER ATTACK",
+      "total": 38.9,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "LOVEABLE METRICS HUB",
+      "total": 37.6,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "Digital Connection Grove",
+      "total": 35.5,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "Deleted project",
+      "total": 34,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "Deleted project (2)",
+      "total": 32.6,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "Deleted project (3)",
+      "total": 30,
+      "build": null,
+      "run": null,
+      "cota_gratuita": null,
+      "visitantes": null
+    }
+  ]
+}

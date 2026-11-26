@@ -27,4 +27,6 @@ A cada mudança no sistema o código é publicado e versionado aqui. Os dados s�
 
 O repositório já tem `vercel.json` apontando para `app/` como site estático, sem build.
 
-Importante: esta versão depende do runtime do Claude (`window.claude`) para banco de dados, prints e IA. Fora do Claude a página abre, mas mostra "Abra esta página no Claude para ver o histórico". A versão comercial troca essas peças por Supabase (login, banco, storage) e rotas de API na Vercel com a chave da Anthropic.
+Fora do Claude (ex.: Vercel) o painel abre em **modo leitura**: carrega `app/dados.json`, gerado a partir de `dados/`, e mostra painel, planos, histórico e comparações. Atualizar com prints, assistente de IA e edições ficam escondidos, porque dependem do runtime do Claude. A versão comercial troca essas peças por Supabase (login, banco, storage) e rotas de API na Vercel.
+
+Para atualizar os dados publicados: exporte o banco do painel para `dados/`, gere `app/dados.json` e faça commit. A Vercel republica sozinha.

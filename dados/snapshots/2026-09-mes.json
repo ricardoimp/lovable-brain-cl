@@ -1,0 +1,34 @@
+{
+  "rotulo": "Setembro (gráfico mensal, aprox.)",
+  "captura": "2026-11-25",
+  "periodo_inicio": "2026-09-01",
+  "periodo_fim": "2026-09-30",
+  "dias": 30,
+  "total": 1541,
+  "build": 890,
+  "run": 651,
+  "cota_gratuita": null,
+  "saldo": null,
+  "imagens": [],
+  "insights": [],
+  "run_categorias": {},
+  "run_itens": [],
+  "projetos": [
+    {
+      "nome": "ALPHA FM - SITE",
+      "total": 734,
+      "build": 356,
+      "run": 378,
+      "cota_gratuita": null,
+      "visitantes": null
+    },
+    {
+      "nome": "ALPHA FM - PLAYER",
+      "total": 326,
+      "build": 82,
+      "run": 244,
+      "cota_gratuita": null,
+      "visitantes": null
+    }
+  ]
+}
