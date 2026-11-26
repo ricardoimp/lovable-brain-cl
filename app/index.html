@@ -989,7 +989,6 @@ async function modoLeitura() {
     if (d.precos) precos = { ...precos, ...d.precos };
     planos = d.planos || null;
     tudo();
-    $("sub").textContent += ` · modo leitura, dados exportados em ${dataBR(d.exportado_em)}`;
     ["t-atualizar", "t-assistente"].forEach((id) => { $(id).hidden = true; });
     $("dock").hidden = true; document.body.style.paddingBottom = "0";
     ["bRecIA", "pSalvar", "bPlSalvar"].forEach((id) => { if ($(id)) $(id).hidden = true; });
