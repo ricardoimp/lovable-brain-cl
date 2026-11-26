@@ -22,3 +22,9 @@ O sistema roda como artifact no Claude ("Lovable · Minha economia adorável"): 
 ## Atualização
 
 A cada mudança no sistema o código é publicado e versionado aqui. Os dados são exportados do banco do painel junto com cada commit. Os prints enviados ficam guardados só no painel e não entram no repositório.
+
+## Publicação na Vercel
+
+O repositório já tem `vercel.json` apontando para `app/` como site estático, sem build.
+
+Importante: esta versão depende do runtime do Claude (`window.claude`) para banco de dados, prints e IA. Fora do Claude a página abre, mas mostra "Abra esta página no Claude para ver o histórico". A versão comercial troca essas peças por Supabase (login, banco, storage) e rotas de API na Vercel com a chave da Anthropic.
